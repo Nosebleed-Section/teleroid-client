@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Upload Client</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    </head>
+
+    <!-- body -->
+    <body>
+      <h1>Multer Upload Client</h1>
+      <form id="multipart-form-data" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Upload Form</legend>
+        <label>
+          Title
+          <input type="text" name="title" placeholder="title">
+        </label>
+        <label>
+          Image
+          <input type="file" name="image">
+        </label>
+        <input type="submit" name="submit" value="Upload">
+      </fieldset>
+    </form>
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign Up Form</legend>
+        <label>
+          Email
+          <input type="text" name="credentials[email]">
+        </label>
+        <label>
+          Password
+          <input type="password" name="credentials[password]">
+        </label>
+        <label>
+          Confirm Password
+          <input type="password" name="credentials[password_confirmation]">
+        </label>
+        <input type="submit" name="submit" value="Sign up">
+      </fieldset>
+    </form>
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign In Form</legend>
+        <label>
+          Email
+          <input type="text" name="credentials[email]">
+        </label>
+        <label>
+          Password
+          <input type="password" name="credentials[password]">
+        </label>
+        <input type="submit" name="submit" value="Sign in">
+      </fieldset>
+    </form>
+
+    </body>
+</html>
