@@ -17,7 +17,7 @@
 
     <!-- body -->
     <body>
-      <h1>Multer Upload Client</h1>
+      <h1>TELEROID</h1>
       <form id="multipart-form-data" enctype="multipart/form-data">
       <fieldset>
         <legend>Upload Form</legend>
@@ -36,16 +36,20 @@
       <fieldset>
         <legend>Sign Up Form</legend>
         <label>
+          Username
+          <input type="text" name="credentials[username]" placeholder="username">
+        </label>
+        <label>
           Email
-          <input type="text" name="credentials[email]">
+          <input type="text" name="credentials[email]" placeholder="example@email.com">
         </label>
         <label>
           Password
-          <input type="password" name="credentials[password]">
+          <input type="password" name="credentials[password]" placeholder="•••••••">
         </label>
         <label>
           Confirm Password
-          <input type="password" name="credentials[password_confirmation]">
+          <input type="password" name="credentials[password_confirmation]" placeholder="•••••••">
         </label>
         <input type="submit" name="submit" value="Sign up">
       </fieldset>
@@ -55,11 +59,11 @@
         <legend>Sign In Form</legend>
         <label>
           Email
-          <input type="text" name="credentials[email]">
+          <input type="text" name="credentials[email]" placeholder="example@email.com">
         </label>
         <label>
           Password
-          <input type="password" name="credentials[password]">
+          <input type="password" name="credentials[password]" placeholder="•••••••">
         </label>
         <input type="submit" name="submit" value="Sign in">
       </fieldset>
