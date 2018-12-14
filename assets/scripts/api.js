@@ -3,7 +3,7 @@ const config = require('./config.js')
 
 const sendFormData = data => {
   return $.ajax({
-    url: config.apiUrl + '/uploads',
+    url: config.apiUrl + '/pictures',
     method: 'POST',
     processData: false,
     contentType: false,
