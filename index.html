@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Upload Client</title>
+      <title>Telaroid Client</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -17,7 +17,85 @@
 
     <!-- body -->
     <body>
-      <h1>TELEROID</h1>
+      <div>
+
+        <!-- nabar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Telaroid</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signUpModal">sign up</button></span>
+                <!-- <a class="dropdown-item" href="#" id="sign-in">sign-in</a> -->
+              </li>
+              <li class="nav-item active">
+                <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signInModal">sign in</button></span>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+<!-- SIGN UP MODAL BEGINS -->
+        <div class="modal fade" id="signUpModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up">
+                      <fieldset>
+                        <legend>sign up</legend>
+                          <input type="text" name="credentials[username]" placeholder="username">
+                          <input type="text" name="credentials[email]" placeholder="email">
+                          <input type="password" name="credentials[password]" placeholder="password">
+                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                          <br>
+                          <input type="submit" value="sign up" class="modal-signup">
+                      </fieldset>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGN IN MODAL BEGINS -->
+        <div class="modal fade" id="signInModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signInModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in">
+                    <fieldset>
+                      <legend>sign in</legend>
+                      <input type="text" name="credentials[email]" placeholder="email">
+                      <input type="password" name="credentials[password]" placeholder="password">
+                      <br>
+                      <input type="submit" value="sign in" class="modal-signin">
+                    </fieldset>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <!-- <h1>Telaroid</h1> -->
       <form id="multipart-form-data" enctype="multipart/form-data">
       <fieldset>
         <legend>Upload Form</legend>
@@ -32,7 +110,7 @@
         <input type="submit" name="submit" value="Upload">
       </fieldset>
     </form>
-    <form id="sign-up">
+    <!-- <form id="sign-up">
       <fieldset>
         <legend>Sign Up Form</legend>
         <label>
@@ -53,8 +131,8 @@
         </label>
         <input type="submit" name="submit" value="Sign up">
       </fieldset>
-    </form>
-    <form id="sign-in">
+    </form> -->
+    <!-- <form id="sign-in">
       <fieldset>
         <legend>Sign In Form</legend>
         <label>
@@ -67,7 +145,7 @@
         </label>
         <input type="submit" name="submit" value="Sign in">
       </fieldset>
-    </form>
+    </form> -->
 
     </body>
 </html>

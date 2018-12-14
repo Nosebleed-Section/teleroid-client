@@ -1,5 +1,6 @@
 const store = require('./store.js')
 const config = require('./config.js')
+// const authEvents = require('./events.js')
 
 const sendFormData = data => {
   return $.ajax({
