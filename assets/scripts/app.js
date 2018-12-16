@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const events = require('./events.js')
+const events = require('./auth/events.js')
 
 $(() => {
   $('#multipart-form-data').on('submit', events.onFormSubmit)
