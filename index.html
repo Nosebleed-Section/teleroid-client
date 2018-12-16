@@ -13,14 +13,16 @@
 
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
     <!-- body -->
     <body>
       <div>
 
-        <!-- nabar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- ////// navbar 1 ///// -->
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">Telaroid</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,17 +30,103 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signUpModal">sign up</button></span>
-                <!-- <a class="dropdown-item" href="#" id="sign-in">sign-in</a> -->
-              </li>
+              <li class="nav-item active"> -->
+
+                    <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+
+                <!-- <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signUpModal">sign up</button></span> -->
+
+                    <!-- <a class="dropdown-item" href="#" id="sign-in">sign-in</a> -->
+
+              <!-- </li>
               <li class="nav-item active">
                 <span><button type="button" class="menu-buttons" data-toggle="modal" data-target="#signInModal">sign in</button></span>
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> -->
+
+        <!-- ////// END navbar 1 ///// -->
+
+        <!-- ////// navbar 2 ///// -->
+
+        <!-- <nav class="navbar navbar-expand-sm navbar-light bg-faded">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <!-- Brand -->
+            <!-- <a class="navbar-brand" href="#">Logo</a> -->
+
+            <!-- Links -->
+            <!-- <div class="collapse navbar-collapse" id="nav-content">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">sign-up</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">sign-in</a>
+            </li> -->
+                        <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link 3</a>
+                        </li> -->
+            <!-- </ul>
+            </div>
+        </nav> -->
+
+        <!-- ////// END navbar 2 ///// -->
+
+        <!-- ///// navbar 3 ///// -->
+
+        <!--Navbar-->
+<nav class="navbar navbar-light amber lighten-4 mb-4">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">Telaroid</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="animated-icon1"><span></span><span></span><span></span></div>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#">home <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li id="signed-up" class="nav-item startButtons">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">sign-up</a>
+      </li>
+      <li id="signed-in" class="nav-item startButtons">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">sign-in</a>
+      </li>
+      <li class="nav-item signedInButtons d-none">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#changePasswordModal">account</a>
+      </li>
+      <li class="nav-item signedInButtons d-none">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#uploadModal">upload</a>
+      </li>
+      <li class="nav-item signedInButtons d-none">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#signOutModal">sign-out</a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+
+
+        <!-- ///// END navbar 3 ///// -->
+
+
+
 
 <!-- SIGN UP MODAL BEGINS -->
         <div class="modal fade" id="signUpModal">
@@ -92,11 +180,91 @@
           </div>
         </div>
 
+        <!-- CHANGE PASSWORD MODAL BEGINS -->
+  <div class="modal fade" id="changePasswordModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePasswordModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <fieldset>
+                <legend>change password</legend>
+                <input type="password" name="passwords[old]" placeholder="old password">
+                <input type="password" name="passwords[new]" placeholder="new password">
+                <br>
+                <input type="submit" value="change" class="modal-change-password">
+              </fieldset>
+            </form>
+         </div>
+      </div>
+    </div>
+  </div>
+
+
+        <!-- UPLOAD MODAL BEGINS -->
+        <div class="modal fade" id="uploadModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                  <form id="multipart-form-data" enctype="multipart/form-data">
+                    <fieldset>
+                      <legend>upload photo</legend>
+                      <label>
+                        title
+                        <input type="text" name="title" placeholder="title">
+                      </label>
+                      <label>
+                        image
+                        <input type="file" name="image">
+                      </label>
+                      <input type="submit" name="submit" value="upload">
+                    </fieldset>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGN OUT MODAL BEGINS -->
+<div class="modal fade" id="signOutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signOutModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <fieldset>
+              <legend>definitely sign out?</legend>
+              <input type="submit" value="sign out" class="modal-signout">
+            </fieldset>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
       </div>
       <!-- <h1>Telaroid</h1> -->
-      <form id="multipart-form-data" enctype="multipart/form-data">
+      <!-- <form id="multipart-form-data" enctype="multipart/form-data">
       <fieldset>
         <legend>Upload Form</legend>
         <label>
@@ -109,7 +277,7 @@
         </label>
         <input type="submit" name="submit" value="Upload">
       </fieldset>
-    </form>
+    </form> -->
     <!-- <form id="sign-up">
       <fieldset>
         <legend>Sign Up Form</legend>

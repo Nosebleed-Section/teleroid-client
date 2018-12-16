@@ -12,4 +12,9 @@ $(() => {
   $('#multipart-form-data').on('submit', events.onFormSubmit)
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
+  // Hide/show animation hamburger function
+  $('.navbar-toggler').on('click', function () {
+  // Take this line to first hamburger animations
+    $('.animated-icon1').toggleClass('open')
+  })
 })
