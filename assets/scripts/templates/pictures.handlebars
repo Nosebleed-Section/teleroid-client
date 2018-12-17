@@ -1,7 +1,17 @@
-{{#each pictures as |picture|}}
+<!-- {{#each pictures as |picture|}} -->
 
-<div>
+<!-- <div>
   <img src="{{picture.url}}" width="200" height="200">
-</div>
+</div> -->
 
+<tbody>
+{{#each gridrow}}
+    <tr>
+        {{#each this}}
+            <td><img src="{{this.url}}" width="200" height="200"></td>
+        {{/each}}
+    </tr>
 {{/each}}
+</tbody>
+
+<!-- {{/each}} -->
