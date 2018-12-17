@@ -15,6 +15,13 @@ const sendFormData = data => {
   })
 }
 
+const getAllPictures = () => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures',
+    method: 'GET'
+  })
+}
+
 module.exports = {
   sendFormData
 }
