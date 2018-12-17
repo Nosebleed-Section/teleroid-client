@@ -79,3 +79,9 @@ top: 11px;
 -o-transform: rotate(-135deg);
 transform: rotate(-135deg);
 }
+
+.page-number-container {
+  display: flex;
+  font-size: 72px;
+  justify-content: center;
+}
