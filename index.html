@@ -202,9 +202,48 @@
     </div>
   </div>
 </div>
-<div class="div-of-divs">
+<div align="center" class="div-of-divs">
 
 
 </div>
+
+      <!-- SHOWPIC MODAL BEGINS -->
+      <div class="modal fade" id="showPicModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="showPicModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                <div id="single-pic">the pic will go here</div>
+                <form id="create-comment">
+                  <fieldset>
+                    <legend>create a comment</legend>
+                    <label>
+                      comment:
+                      <input type="text" name="comment" placeholder="add comment here">
+                    </label>
+                    <input type="submit" name="submit" value="add comment" class="modal-single-pic">
+                  </fieldset>
+                </form>
+                <form id="update-comment">
+                  <fieldset>
+                    <legend>change a comment</legend>
+                    <label>
+                      comment:
+                      <input type="text" name="comment" placeholder="change comment here">
+                    </label>
+                    <input type="submit" name="submit" value="add comment" class="modal-single-pic">
+                  </fieldset>
+                </form>
+                <div id="comment-message" class="message"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+
     </body>
 </html>
