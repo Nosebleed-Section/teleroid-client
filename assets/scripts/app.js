@@ -7,12 +7,16 @@
 // require('./example')
 
 const authEvents = require('./auth/events.js')
+const authUi = require('./auth/ui.js')
 const picEvents = require('./pictures/events.js')
 
 $(() => {
   $('#multipart-form-data').on('submit', picEvents.onFormSubmit)
   $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('submit', authEvents.onSignOut)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('.modal').on('hide.bs.modal', authUi.resetForms)
   // Hide/show animation hamburger function
   $('.navbar-toggler').on('click', function () {
   // Take this line to first hamburger animations
