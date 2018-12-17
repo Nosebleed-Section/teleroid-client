@@ -14,6 +14,7 @@ const onFormSubmit = (event) => {
 const onGetAllPictures = (event) => {
   api.getAllPictures()
     .then(ui.onGetAllPicturesSuccess)
+    .then(() => { ui.displayPageOfPictures(0) })
     .catch(ui.onGetAllPicturesFailure)
 }
 
