@@ -7,8 +7,11 @@ const allPicturesTemplate = require('../templates/pictures.handlebars')
 const onGetAllPicturesSuccess = function (data) {
   store.pictures = data.pictures
   store.picsPerPage = 12
-  store.pageNums = (data.pictures.length % store.picsPerPage) + 1
-  console.log(store.pageNums)
+  if (data.pictures.length > store.picsPerPage) {
+    store.pageNums = (data.pictures.length % store.picsPerPage) + 1
+  } else {
+    store.pageNums = 1
+  }
 }
 
 const displayPageOfPictures = (page) => {
