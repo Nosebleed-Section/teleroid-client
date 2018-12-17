@@ -23,5 +23,6 @@ const getAllPictures = () => {
 }
 
 module.exports = {
-  sendFormData
+  sendFormData,
+  getAllPictures
 }

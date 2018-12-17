@@ -11,6 +11,7 @@ const authUi = require('./auth/ui.js')
 const picEvents = require('./pictures/events.js')
 
 $(() => {
+  picEvents.onGetAllPictures()
   $('#multipart-form-data').on('submit', picEvents.onFormSubmit)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#change-password').on('submit', authEvents.onChangePassword)

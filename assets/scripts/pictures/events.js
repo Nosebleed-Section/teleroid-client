@@ -12,7 +12,6 @@ const onFormSubmit = (event) => {
 }
 
 const onGetAllPictures = (event) => {
-  event.preventDefault()
   api.getAllPictures()
     .then(ui.onGetAllPicturesSuccess)
     .catch(ui.onGetAllPicturesFailure)
