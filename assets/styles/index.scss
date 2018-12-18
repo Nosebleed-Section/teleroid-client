@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+$telaroid-blue: #08a6e1;
+$telaroid-green: #1bb137;
+$telaroid-yellow: #ffb337;
+$telaroid-orange: #fe811b;
+$telaroid-red: #fb201e;
+
 body {
   font-family: 'Source Code Pro', monospace;
   padding-top: 1em;
@@ -48,17 +55,21 @@ background: #e65100;
 
 .animated-icon1 span:nth-child(1) {
 top: 0px;
+background: $telaroid-blue;
 }
 
 .animated-icon1 span:nth-child(2) {
 top: 10px;
+background: $telaroid-green;
 }
 
 .animated-icon1 span:nth-child(3) {
 top: 20px;
+background: $telaroid-yellow;
 }
 
 .animated-icon1.open span:nth-child(1) {
+background: $telaroid-orange;
 top: 11px;
 -webkit-transform: rotate(135deg);
 -moz-transform: rotate(135deg);
@@ -73,6 +84,7 @@ left: -60px;
 }
 
 .animated-icon1.open span:nth-child(3) {
+background: $telaroid-red;
 top: 11px;
 -webkit-transform: rotate(-135deg);
 -moz-transform: rotate(-135deg);

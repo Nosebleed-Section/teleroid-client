@@ -7,11 +7,8 @@ const allPicturesTemplate = require('../templates/pictures.handlebars')
 const onGetAllPicturesSuccess = function (data) {
   store.pictures = data.pictures
   store.picsPerPage = 12
-  if (data.pictures.length > store.picsPerPage) {
-    store.pageNums = (data.pictures.length % store.picsPerPage) + 1
-  } else {
-    store.pageNums = 1
-  }
+
+  store.pageNums = Math.ceil(data.pictures.length / store.picsPerPage)
 }
 
 const displayPageOfPictures = (page) => {
@@ -26,7 +23,7 @@ const displayPageOfPictures = (page) => {
   let moreHtml = ''
   if (store.pageNums > 1) {
     moreHtml += `<div class="page-number-container">`
-    for (let i = 0; i <= store.pageNums; i++) {
+    for (let i = 0; i < store.pageNums; i++) {
       if (i !== page) {
         moreHtml += `<div class="page-number"><a href="#" id="${i}">${i + 1}</a></div>`
       } else {
@@ -35,6 +32,7 @@ const displayPageOfPictures = (page) => {
     }
     moreHtml += `</div>`
   }
+  $('.div-of-divs').html('')
   $('.div-of-divs').html(html)
   $('.div-of-divs').append(moreHtml)
   $('.page-number').on('click', function (event) {
