@@ -25,4 +25,5 @@ $(() => {
   // Take this line to first hamburger animations
     $('.animated-icon1').toggleClass('open')
   })
+  $('#my-photos').on('click', picEvents.onGetAllUserPictures)
 })

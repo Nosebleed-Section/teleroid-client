@@ -13,6 +13,20 @@ const onGetAllPicturesSuccess = function (data) {
   usablePics.sort((a, b) => {
     return new Date(a.createdAt) - new Date(b.createdAt)
   })
+  store.view = 'all pics'
+  store.pictures = usablePics
+  store.picsPerPage = 12
+  store.pageNums = Math.ceil(usablePics.length / store.picsPerPage)
+}
+
+const onGetAllUserPicturesSuccess = function (data) {
+  const usablePics = data.pictures.filter(picture => {
+    return (picture.url && picture.owner === store.user._id)
+  })
+  usablePics.sort((a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+  })
+  store.view = 'user pics'
   store.pictures = usablePics
   store.picsPerPage = 12
   store.pageNums = Math.ceil(usablePics.length / store.picsPerPage)
@@ -69,7 +83,22 @@ const displayPageOfPictures = (page) => {
   })
 }
 
+const onUploadFormSubmitSuccess = () => {
+$('#upload-message').html('successfully uploaded pic')
+console.log('successfully uploaded a pic')
+setTimeout(function () {
+  $('#uploadModal').modal('hide')
+}, 2000)
+}
+
+const onUploadFormSubmitFailure = (response) => {
+  console.error(response)
+  $('#upload-message').html('could not upload pic')
+}
 module.exports = {
   displayPageOfPictures,
-  onGetAllPicturesSuccess
+  onGetAllPicturesSuccess,
+  onGetAllUserPicturesSuccess,
+  onUploadFormSubmitSuccess,
+  onUploadFormSubmitFailure
 }
