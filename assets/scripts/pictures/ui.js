@@ -19,6 +19,7 @@ const onGetAllPicturesSuccess = function (data) {
 }
 
 const displayOneImage = (data) => {
+  $('#display-comments').html('')
   console.log('data is', data)
   $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
   data.picture.comments.forEach(comment => {
