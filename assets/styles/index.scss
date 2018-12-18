@@ -12,6 +12,30 @@ body {
   padding-top: 1em;
 }
 
+.show-pic-modal-content {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 10%);
+  width: auto !important;
+}
+
+.single-pic-image {
+  height: auto;
+  max-width: 60vw !important;
+}
+
+.picture-preview-image {
+  width: 200px;
+  height: 200px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}
+
 /* Icon 1 */
 
 .animated-icon1 {

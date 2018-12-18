@@ -5,10 +5,22 @@ const store = require('../store.js')
 const allPicturesTemplate = require('../templates/pictures.handlebars')
 
 const onGetAllPicturesSuccess = function (data) {
-  store.pictures = data.pictures
+  const usablePics = data.pictures.filter(picture => {
+    return picture.url
+  })
+  usablePics.sort((a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+  })
+  store.pictures = usablePics
   store.picsPerPage = 12
+  store.pageNums = Math.ceil(usablePics.length / store.picsPerPage)
+}
 
-  store.pageNums = Math.ceil(data.pictures.length / store.picsPerPage)
+const displayOneImage = (id) => {
+  const oneImage = store.pictures.filter(picture => picture._id === id)
+  $('#single-pic').html(`<img class="single-pic-image" src=${oneImage[0].url}>`)
+  // add line here that appends comments in right place
+  $('#showPicModal').modal('show')
 }
 
 const displayPageOfPictures = (page) => {
@@ -25,7 +37,7 @@ const displayPageOfPictures = (page) => {
     moreHtml += `<div class="page-number-container">`
     for (let i = 0; i < store.pageNums; i++) {
       if (i !== page) {
-        moreHtml += `<div class="page-number"><a href="#" id="${i}">${i + 1}</a></div>`
+        moreHtml += `<div class="page-number"><a href="#" data-id="${i}">${i + 1}</a></div>`
       } else {
         moreHtml += `<div>${i + 1}</div>`
       }
@@ -37,7 +49,11 @@ const displayPageOfPictures = (page) => {
   $('.div-of-divs').append(moreHtml)
   $('.page-number').on('click', function (event) {
     event.preventDefault()
-    displayPageOfPictures(parseInt(event.target.id))
+    displayPageOfPictures(parseInt($(event.target).data('id')))
+  })
+  $('.picture-preview-image').on('click', function (event) {
+    event.preventDefault()
+    displayOneImage($(event.target).data('id'))
   })
 }
 
