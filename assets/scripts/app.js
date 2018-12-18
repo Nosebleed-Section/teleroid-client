@@ -9,6 +9,7 @@
 const authEvents = require('./auth/events.js')
 const authUi = require('./auth/ui.js')
 const picEvents = require('./pictures/events.js')
+const commentEvents = require('./comments/events.js')
 
 $(() => {
   picEvents.onGetAllPictures()
@@ -17,6 +18,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#create-comment').on('submit', commentEvents.onCreateComment)
   $('.modal').on('hide.bs.modal', authUi.resetForms)
   // Hide/show animation hamburger function
   $('.navbar-toggler').on('click', function () {

@@ -1,6 +1,8 @@
 'use strict'
 
+const api = require('./api.js')
 const store = require('../store.js')
+const commentApi = require('../comments/api.js')
 
 const allPicturesTemplate = require('../templates/pictures.handlebars')
 
@@ -16,10 +18,18 @@ const onGetAllPicturesSuccess = function (data) {
   store.pageNums = Math.ceil(usablePics.length / store.picsPerPage)
 }
 
-const displayOneImage = (id) => {
-  const oneImage = store.pictures.filter(picture => picture._id === id)
-  $('#single-pic').html(`<img class="single-pic-image" src=${oneImage[0].url}>`)
-  // add line here that appends comments in right place
+const displayOneImage = (data) => {
+  console.log('data is', data)
+  $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
+  data.picture.comments.forEach(comment => {
+    console.log('in forEach, comment is', comment)
+    commentApi.show(comment)
+      .then(comment => {
+        console.log('comment is', comment)
+        $('#display-comments').append(`${comment.username}: ${comment.content}<br />`)
+      })
+      .catch(console.err)
+  })
   $('#showPicModal').modal('show')
 }
 
@@ -53,7 +63,8 @@ const displayPageOfPictures = (page) => {
   })
   $('.picture-preview-image').on('click', function (event) {
     event.preventDefault()
-    displayOneImage($(event.target).data('id'))
+    api.getOnePicture($(event.target).data('id'))
+      .then(displayOneImage)
   })
 }
 
