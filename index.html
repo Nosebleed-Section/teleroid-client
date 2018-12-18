@@ -45,6 +45,10 @@
       <li id="signed-in" class="nav-item startButtons">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">sign-in</a>
       </li>
+      <!-- unfinished my photos nav button -->
+      <li id="my-photos" class="nav-item signedInButtons d-none">
+        <a class="nav-link" href="#">my photos</a>
+      </li>
       <li class="nav-item signedInButtons d-none">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#changePasswordModal">account</a>
       </li>
@@ -219,6 +223,20 @@
               </div>
               <div class="modal-body">
                 <div id="single-pic">the pic will go here</div>
+                <aside>
+                <div id="display-comments">
+                <div id="scrollable-comments">
+                  <form id="update-comment">
+                    <fieldset>
+                      <legend>change a comment</legend>
+                      <label>
+                        comment:
+                        <input type="text" name="comment" placeholder="change comment here">
+                      </label>
+                      <input type="submit" name="submit" value="add comment" class="modal-single-pic">
+                    </fieldset>
+                  </form>
+                </div>
                 <form id="create-comment">
                   <fieldset>
                     <legend>create a comment</legend>
@@ -229,18 +247,10 @@
                     <input type="submit" name="submit" value="add comment" class="modal-single-pic">
                   </fieldset>
                 </form>
-                <form id="update-comment">
-                  <fieldset>
-                    <legend>change a comment</legend>
-                    <label>
-                      comment:
-                      <input type="text" name="comment" placeholder="change comment here">
-                    </label>
-                    <input type="submit" name="submit" value="add comment" class="modal-single-pic">
-                  </fieldset>
-                </form>
                 <div id="comment-message" class="message"></div>
               </div>
+            </aside>
+           </div>
           </div>
         </div>
       </div>
