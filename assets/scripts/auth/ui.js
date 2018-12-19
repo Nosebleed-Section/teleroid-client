@@ -8,14 +8,16 @@ const resetForms = () => {
 
 const signUpSuccess = function (data) {
   $('#sign-up-message').text('Signed up successfully')
-  $('#sign-up-message').removeClass()
+  $('#sign-up-message').removeClass('failure')
   $('#sign-up-message').addClass('success')
-  $('#signed-up').addClass('d-none')
+  $('.startButtons').addClass('d-none')
+  $('.signedInButtons').removeClass('d-none')
   setTimeout(function () {
     resetForms()
     $('#signUpModal').modal('hide')
   }, 2000)
   console.log('signUpSuccess ran. Data is :', data)
+  store.user = data.user
 }
 
 // const signUpSuccess = (data) => {
