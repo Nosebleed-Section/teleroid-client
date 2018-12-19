@@ -36,13 +36,15 @@ const displayOneImage = (data) => {
   $('#display-comments').html('')
   console.log('data is', data)
   $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
-  if (store.user._id === data.picture.owner) {
-     $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
-     $('.edit-pencil').on("click", ()=> {
-       console.log('insside edit pencil')
-       $('#showPicModal').modal('hide')
-       $('#editPictureModal').modal('show')
-     })
+  if (store.user) {
+    if (store.user._id === data.picture.owner) {
+      $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
+      $('.edit-pencil').on('click', () => {
+        console.log('insside edit pencil')
+        $('#showPicModal').modal('hide')
+        $('#editPictureModal').modal('show')
+      })
+    }
   }
   data.picture.comments.forEach(comment => {
     console.log('in forEach, comment is', comment)
