@@ -84,22 +84,39 @@ const displayPageOfPictures = (page) => {
 }
 
 const onUploadFormSubmitSuccess = () => {
-$('#upload-message').html('successfully uploaded pic')
-console.log('successfully uploaded a pic')
-setTimeout(function () {
-  $('#uploadModal').modal('hide')
-}, 2000)
+  $('#upload-message').html('successfully uploaded pic')
+  console.log('successfully uploaded a pic')
+  setTimeout(function () {
+    $('#uploadModal').modal('hide')
+  }, 2000)
 }
 
 const onUploadFormSubmitFailure = (response) => {
   console.error(response)
   $('#upload-message').html('could not upload pic')
 }
+
+const onUpdateFormSubmitSuccess = () => {
+  $('#upload-message').html('successfully updated pic')
+  console.log('successfully updated a pic')
+  setTimeout(function () {
+    $('#editPictureModal').modal('hide')
+  }, 2000)
+}
+
+const onUpdateFormSubmitFailure = (response) => {
+  console.error(response)
+  $('#upload-message').html('could not update pic')
+}
+
 module.exports = {
   displayOneImage,
   displayPageOfPictures,
   onGetAllPicturesSuccess,
   onGetAllUserPicturesSuccess,
   onUploadFormSubmitSuccess,
-  onUploadFormSubmitFailure
+  onUploadFormSubmitFailure,
+  onUpdateFormSubmitSuccess,
+  onUpdateFormSubmitFailure,
+  displayOneImage
 }
