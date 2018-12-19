@@ -3,7 +3,7 @@ const store = require('../store.js')
 
 const destroy = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/comments/' + data.comment.id,
+    url: config.apiUrl + '/comments/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

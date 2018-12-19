@@ -37,6 +37,7 @@ const getAllPictures = () => {
 }
 
 const getOnePicture = (id) => {
+  console.log('inside getOnePicture')
   return $.ajax({
     url: config.apiUrl + '/pictures/' + id,
     method: 'GET'

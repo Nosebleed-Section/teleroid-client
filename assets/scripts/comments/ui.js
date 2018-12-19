@@ -3,9 +3,11 @@ const picUi = require('./../pictures/ui.js')
 
 const onDeleteCommentSuccess = () => {
   $('#comment-message').html('comment successfully destroyed')
-  $('#delete-comment').trigger('reset')
-  picApi.getOnePicture($('.single-pic-image').data('id'))
-    .then(picUi.displayOneImage)
+  // $('#delete-comment').trigger('reset')
+  setTimeout(() => {
+    picApi.getOnePicture($('.single-pic-image').data('id'))
+      .then(picUi.displayOneImage)
+  }, 2000)
 }
 
 const onDeleteCommentFailure = (response) => {
