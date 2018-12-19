@@ -29,7 +29,7 @@ const onCreateCommentSuccess = () => {
   $('#comment-message').html('you added a comment')
   picApi.getOnePicture($('.single-pic-image').data('id'))
     .then(picUi.displayOneImage)
-  // $('#create-comment').trigger('reset')
+  $('#create-comment').trigger('reset')
 }
 
 const onCreateCommentFailure = (response) => {
