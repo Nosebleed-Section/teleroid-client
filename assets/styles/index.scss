@@ -13,6 +13,16 @@ body {
   padding-top: 1em;
 }
 
+.spin {
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+
+  &:hover {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
+
 div {
   &.div-of-divs {
     position: absolute;
@@ -121,6 +131,10 @@ img {
 .animated-icon1 span:nth-child(3) {
   top: 20px;
   background: $telaroid-yellow;
+
+  // &:hover {
+  //   background: $telaroid-red;
+  // }
 }
 
 .animated-icon1.open span:nth-child(1) {
