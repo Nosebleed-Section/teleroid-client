@@ -118,6 +118,7 @@ const onUpdateFormSubmitFailure = (response) => {
 }
 
 module.exports = {
+  displayOneImage,
   displayPageOfPictures,
   onGetAllPicturesSuccess,
   onGetAllUserPicturesSuccess,
