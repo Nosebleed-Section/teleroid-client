@@ -19,6 +19,21 @@ const onFormSubmit = (event) => {
     .catch(ui.onUploadFormSubmitFailure)
 }
 
+const onModifyFormSubmit = (event) => {
+  event.preventDefault()
+  const updateForm = document.getElementById('edic-photo-form-data')
+  const formData = new FormData(updateForm)
+  if (formData.comment.content === '') {
+    $
+  } else if (formData.comment.id === '') {
+
+  } else {
+    api.sendModifyFormData(formData)
+      .then(ui.onUpdateFormSubmitSuccess)
+      .catch(ui.onUpdateFormSubmitFailure)
+  }
+}
+
 const onGetAllPictures = (event) => {
   api.getAllPictures()
     .then(ui.onGetAllPicturesSuccess)
@@ -33,8 +48,17 @@ const onGetAllUserPictures = (event) => {
     .catch(ui.onGetAllUserPicturesFailure)
 }
 
+const onDeletePicture = (event) => {
+  api.deletePicture()
+    .then(ui.onDeletePictureSuccess)
+    .then(() => { ui.displayPageOfPictures(0) })
+    .catch(ui.onDeletePictureFailure)
+}
+
 module.exports = {
   onFormSubmit,
   onGetAllPictures,
-  onGetAllUserPictures
+  onGetAllUserPictures,
+  onModifyFormSubmit,
+  onDeletePicture
 }

@@ -15,6 +15,19 @@ const sendFormData = data => {
   })
 }
 
+const sendModifyFormData = data => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures/' + id,
+    method: 'PATCH',
+    processData: false,
+    contentType: false,
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const getAllPictures = () => {
   return $.ajax({
     url: config.apiUrl + '/pictures',
@@ -29,8 +42,16 @@ const getOnePicture = (id) => {
   })
 }
 
+const deletePicture = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures/' + id,
+    method: ''
+  })
+}
+
 module.exports = {
   sendFormData,
   getAllPictures,
-  getOnePicture
+  getOnePicture,
+  sendModifyFormData
 }
