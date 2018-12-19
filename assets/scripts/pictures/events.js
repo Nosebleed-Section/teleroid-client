@@ -21,10 +21,13 @@ const onFormSubmit = (event) => {
 
 const onModifyFormSubmit = (event) => {
   event.preventDefault()
-  const updateForm = document.getElementById('edic-photo-form-data')
+  const updateForm = document.getElementById('edit-photo-form-data')
   const formData = new FormData(updateForm)
-  console.log(formData.getAll())
-  if (formData.title === '' && formData.id == '') {
+  formData.set('id', $('.single-pic-image').data('id'))
+  for (let pair of formData.entries()) {
+      console.log(pair[0]+ ', '+ pair[1])
+  }
+  if (formData.title === '' && formData.image === undefined) {
     $('#edit-pic-message').html('please add image or title')
   } else {
     api.sendModifyFormData(formData)

@@ -14,6 +14,7 @@ const commentEvents = require('./comments/events.js')
 $(() => {
   picEvents.onGetAllPictures()
   $('#multipart-form-data').on('submit', picEvents.onFormSubmit)
+  $('#edit-photo-form-data').on('submit', picEvents.onModifyFormSubmit)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
@@ -27,5 +28,6 @@ $(() => {
   // Take this line to first hamburger animations
     $('.animated-icon1').toggleClass('open')
   })
+
   $('#my-photos').on('click', picEvents.onGetAllUserPictures)
 })
