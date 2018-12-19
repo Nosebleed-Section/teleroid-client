@@ -22,6 +22,7 @@ $(() => {
   $('#create-comment').on('submit', commentEvents.onCreateComment)
   $('#delete-comment-button').on('click', commentEvents.onDeleteCommentClick)
   $('#delete-comment-submit').on('click', commentEvents.onDeleteCommentSubmit)
+  $('#delete-picture-submit').on('click', picEvents.onDeletePicture)
   $('.modal').on('hide.bs.modal', authUi.resetForms)
   // Hide/show animation hamburger function
   $('.navbar-toggler').on('click', function () {

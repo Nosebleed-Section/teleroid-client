@@ -51,9 +51,15 @@ const onGetAllUserPictures = (event) => {
 }
 
 const onDeletePicture = (event) => {
-  api.deletePicture()
+  api.deletePicture($('.single-pic-image').data('id'))
     .then(ui.onDeletePictureSuccess)
-    .then(() => { ui.displayPageOfPictures(0) })
+    .then(() => {
+      if (store.view === 'user pics') {
+        onGetAllUserPictures()
+      } else {
+        onGetAllPictures()
+      }
+    })
     .catch(ui.onDeletePictureFailure)
 }
 

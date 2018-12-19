@@ -46,11 +46,15 @@ const getOnePicture = (id) => {
 const deletePicture = (id) => {
   return $.ajax({
     url: config.apiUrl + '/pictures/' + id,
-    method: ''
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 module.exports = {
+  deletePicture,
   sendFormData,
   getAllPictures,
   getOnePicture,

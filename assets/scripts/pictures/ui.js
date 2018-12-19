@@ -39,10 +39,15 @@ const displayOneImage = (data) => {
   if (store.user) {
     if (store.user._id === data.picture.owner) {
       $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
+      $('#single-pic').append(`<img class="close-button" src="../../public/images/close-x-gray24.png">`)
       $('.edit-pencil').on('click', () => {
         console.log('insside edit pencil')
         $('#showPicModal').modal('hide')
         $('#editPictureModal').modal('show')
+      })
+      $('.close-button').on('click', () => {
+        console.log('insssssside close button')
+        $('#deletePictureConfirmModal').modal('show')
       })
     }
   }
@@ -93,6 +98,17 @@ const displayPageOfPictures = (page) => {
   })
 }
 
+const onDeletePictureSuccess = () => {
+  $('#comment-message').html('successfully deleted pic')
+  setTimeout(function () {
+    $('#showPicModal').modal('hide')
+  }, 2000)
+}
+
+const onDeletePictureFailure = () => {
+  $('#comment-message').html('failed to delete pic')
+}
+
 const onUploadFormSubmitSuccess = () => {
   $('#upload-message').html('successfully uploaded pic')
   console.log('successfully uploaded a pic')
@@ -122,11 +138,12 @@ const onUpdateFormSubmitFailure = (response) => {
 module.exports = {
   displayOneImage,
   displayPageOfPictures,
+  onDeletePictureFailure,
+  onDeletePictureSuccess,
   onGetAllPicturesSuccess,
   onGetAllUserPicturesSuccess,
   onUploadFormSubmitSuccess,
   onUploadFormSubmitFailure,
   onUpdateFormSubmitSuccess,
-  onUpdateFormSubmitFailure,
-  displayOneImage
+  onUpdateFormSubmitFailure
 }
