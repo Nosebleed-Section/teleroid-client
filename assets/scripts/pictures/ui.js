@@ -11,7 +11,7 @@ const onGetAllPicturesSuccess = function (data) {
     return picture.url
   })
   usablePics.sort((a, b) => {
-    return new Date(a.createdAt) - new Date(b.createdAt)
+    return new Date(b.createdAt) - new Date(a.createdAt)
   })
   store.view = 'all pics'
   store.pictures = usablePics
