@@ -4,16 +4,21 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 const onDeleteCommentClick = function (event) {
+  console.log('in onDeleteCommentClick')
   event.preventDefault()
+  console.log(event.target)
+  console.log($(event.target).data('id'))
+  store.deleteCommentId = $(event.target).data('id')
   $('#deleteCommentConfirmModal').modal('show')
 }
 
 const onDeleteCommentSubmit = function (event) {
+  console.log('in onDeleteCommentSubmit')
   event.preventDefault()
-  const data = $(event.target).data('id')
+  const data = store.deleteCommentId
   api.destroy(data)
-    .then(ui.onDestroyCommentSuccess)
-    .catch(ui.onDestroyCommentError)
+    .then(ui.onDeleteCommentSuccess)
+    .catch(ui.onDeleteCommentError)
 }
 
 const onUpdateComment = function (event) {

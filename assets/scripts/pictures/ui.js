@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const store = require('../store.js')
 const commentApi = require('../comments/api.js')
+const commentEvents = require('../comments/events.js')
 
 const allPicturesTemplate = require('../templates/pictures.handlebars')
 
@@ -51,12 +52,29 @@ const displayOneImage = (data) => {
       })
     }
   }
-  data.picture.comments.forEach(comment => {
+  displayImageContents(data.picture.comments)
+}
+
+const displayImageContents = (comments) => {
+  comments.forEach(comment => {
     console.log('in forEach, comment is', comment)
     commentApi.show(comment)
       .then(comment => {
         console.log('comment is', comment)
         $('#display-comments').append(`${comment.username}: ${comment.content}<br />`)
+        if (store.user) {
+          if (store.user._id === comment.owner) {
+            console.log('comment._id is ', comment._id)
+            $('#display-comments').append(`<img class="comment-edit-pencil" src="../../public/images/pencil-edit-button-gray24.png" data-id="${comment._id}">`)
+            $('#display-comments').append(`<img class="comment-close-button" src="../../public/images/close-x-gray24.png" data-id="${comment._id}">`)
+            $('.comment-edit-pencil').on('click', () => {
+              console.log('insside edit pencil')
+              $('#showPicModal').modal('hide')
+              $('#editPictureModal').modal('show')
+            })
+            $('.comment-close-button').on('click', commentEvents.onDeleteCommentClick)
+          }
+        }
       })
       .catch(console.err)
   })
