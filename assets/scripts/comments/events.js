@@ -3,16 +3,17 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
-const onDeleteComment = function (event) {
+const onDeleteCommentClick = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  if (data.comment.id === '') {
-    $('#comment-message').html('<p>ID is required</p>')
-  } else {
-    api.destroy(data)
-      .then(ui.onDestroyCommentSuccess)
-      .catch(ui.onDestroyCommentError)
-  }
+  $('#deleteCommentConfirmModal').modal('show')
+}
+
+const onDeleteCommentSubmit = function (event) {
+  event.preventDefault()
+  const data = $(event.target).data('id')
+  api.destroy(data)
+    .then(ui.onDestroyCommentSuccess)
+    .catch(ui.onDestroyCommentError)
 }
 
 const onUpdateComment = function (event) {
@@ -45,5 +46,6 @@ const onCreateComment = function (event) {
 module.exports = {
   onCreateComment,
   onUpdateComment,
-  onDeleteComment
+  onDeleteCommentClick,
+  onDeleteCommentSubmit
 }

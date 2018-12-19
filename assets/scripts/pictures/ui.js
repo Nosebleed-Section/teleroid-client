@@ -96,6 +96,7 @@ const onUploadFormSubmitFailure = (response) => {
   $('#upload-message').html('could not upload pic')
 }
 module.exports = {
+  displayOneImage,
   displayPageOfPictures,
   onGetAllPicturesSuccess,
   onGetAllUserPicturesSuccess,
