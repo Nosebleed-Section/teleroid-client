@@ -23,10 +23,9 @@ const onModifyFormSubmit = (event) => {
   event.preventDefault()
   const updateForm = document.getElementById('edic-photo-form-data')
   const formData = new FormData(updateForm)
-  if (formData.comment.content === '') {
-    $
-  } else if (formData.comment.id === '') {
-
+  console.log(formData.getAll())
+  if (formData.title === '' && formData.id == '') {
+    $('#edit-pic-message').html('please add image or title')
   } else {
     api.sendModifyFormData(formData)
       .then(ui.onUpdateFormSubmitSuccess)
