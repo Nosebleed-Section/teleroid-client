@@ -50,11 +50,12 @@ const refreshOneImage = (data) => {
   api.getOnePicture(data)
     .then((data) => {
       $('#display-comments').html('')
+      $('#showPicModalLabel').text(`${data.picture.title}`)
       $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
       if (store.user) {
         if (store.user._id === data.picture.owner) {
-          $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
-          $('#single-pic').append(`<img class="close-button" src="../../public/images/close-x-gray24.png">`)
+          $('#single-pic').append(`<div class="edit-pencil"></div>`)
+          $('#single-pic').append(`<div class="close-button">`)
           $('.edit-pencil').on('click', () => {
             $('#showPicModal').modal('hide')
             $('#editPictureModal').modal('show')
@@ -73,14 +74,17 @@ const refreshOneImage = (data) => {
 }
 
 const refreshImageContents = (comments) => {
+  comments.sort((a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+  })
   comments.forEach(comment => {
     api.show(comment)
       .then(comment => {
         $('#display-comments').append(`${comment.username}: <span class="comment-div" id="${comment._id}">${comment.content}</span>`)
         if (store.user) {
           if (store.user._id === comment.owner) {
-            $('#display-comments').append(`<img class="comment-edit-pencil" src="../../public/images/pencil-edit-button-gray24.png" data-id="${comment._id}">`)
-            $('#display-comments').append(`<img class="comment-close-button" src="../../public/images/close-x-gray24.png" data-id="${comment._id}">`)
+            $('#display-comments').append(`<div class="comment-edit-pencil" data-id="${comment._id}"></div>`)
+            $('#display-comments').append(`<div class="comment-close-button" data-id="${comment._id}"></div>`)
             $('.comment-edit-pencil').on('click', onEditPencilClick)
             $('.comment-close-button').on('click', onDeleteCommentClick)
           }

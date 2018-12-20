@@ -36,11 +36,11 @@ const onGetAllUserPicturesSuccess = function (data) {
 
 const displayOneImage = (data) => {
   $('#display-comments').html('')
-  $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
+  $('#single-pic').html('')
   if (store.user) {
     if (store.user._id === data.picture.owner) {
-      $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
-      $('#single-pic').append(`<img class="close-button" src="../../public/images/close-x-gray24.png">`)
+      $('#single-pic').append(`<div class="edit-pencil"></div>`)
+      $('#single-pic').append(`<div class="close-button"></div>`)
       $('.edit-pencil').on('click', () => {
         $('#showPicModal').modal('hide')
         $('#editPictureModal').modal('show')
@@ -50,25 +50,30 @@ const displayOneImage = (data) => {
       })
     }
   }
+  $('#single-pic').append(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
+  $('#showPicModalLabel').text(`${data.picture.title}`)
   displayImageContents(data.picture.comments)
 }
 
 const displayImageContents = (comments) => {
+  comments.sort((a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+  })
   comments.forEach(comment => {
     commentApi.show(comment)
       .then(comment => {
         $('#display-comments').append(`${comment.username}: <span class="comment-div" id="${comment._id}">${comment.content}</span>`)
         if (store.user) {
           if (store.user._id === comment.owner) {
-            $('#display-comments').append(`<img class="comment-edit-pencil" src="../../public/images/pencil-edit-button-gray24.png" data-id="${comment._id}">`)
-            $('#display-comments').append(`<img class="comment-close-button" src="../../public/images/close-x-gray24.png" data-id="${comment._id}">`)
+            $('#display-comments').append(`<div class="comment-edit-pencil" data-id="${comment._id}"></div>`)
+            $('#display-comments').append(`<div class="comment-close-button" data-id="${comment._id}"></div>`)
             $('.comment-edit-pencil').on('click', onEditPencilClick)
             $('.comment-close-button').on('click', commentEvents.onDeleteCommentClick)
           }
         }
         $('#display-comments').append('<br />')
       })
-      .catch((error) => {
+      .catch(() => {
         $('#display-comments').html(`<p class="failure">Error: could not load comment data</p>`)
       })
   })

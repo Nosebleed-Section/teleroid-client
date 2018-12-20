@@ -6,6 +6,8 @@ $telaroid-yellow: #ffb337;
 $telaroid-orange: #fe811b;
 $telaroid-red: #fb201e;
 
+$light-grey: #d3d3d3;
+
 body {
   background-color: #000;
   font-family: 'Source Code Pro', monospace;
@@ -23,19 +25,79 @@ body {
 }
 
 div {
+  &.close-button {
+    align-self: flex-end;
+    background-image: url('../../public/images/close-x-gray24.png');
+    background-size: cover;
+    height: 25px;
+    margin-left: -10px;
+    margin-top: 10px;
+    position: absolute;
+    width: 25px;
+    z-index: 100;
+
+    &:hover {
+      background-image: url('../../public/images/close-x-red512.png');
+    }
+  }
+
+  &.comment-close-button {
+    align-self: flex-end;
+    background-image: url('../../public/images/close-x-gray24.png');
+    background-size: cover;
+    display: inline-block;
+    height: 13px;
+    width: 13px;
+    z-index: 100;
+
+    &:hover {
+      background-image: url('../../public/images/close-x-gray24.png');
+    }
+  }
+
+  &.comment-edit-pencil {
+    align-self: flex-end;
+    background-image: url('../../public/images/pencil-gray512c.png');
+    background-size: cover;
+    display: inline-block;
+    height: 13px;
+    width: 13px;
+    z-index: 100;
+
+    &:hover {
+      background-image: url('../../public/images/pencil-blue512c.png');
+    }
+  }
+
   &.div-of-divs {
+    left: 50%;
     position: absolute;
     transform: translateX(-50%);
-    left: 50%;
   }
 
   &.display-comments {
-    border: 1px solid lightgrey;
+    border: 1px solid $light-grey;
     border-radius: 7px;
     height: 200px;
     margin-left: 16px;
     overflow-y: scroll;
     width: 300px;
+  }
+
+  &.edit-pencil {
+    align-self: flex-end;
+    background-image: url('../../public/images/pencil-gray512c.png');
+    background-size: cover;
+    height: 25px;
+    margin-left: -46px;
+    margin-top: 10px;
+    position: absolute;
+    width: 25px;
+    z-index: 100;
+
+    &:hover {
+      background-image: url('../../public/images/pencil-blue512c.png');
+    }
   }
 
   &.show-pic-modal-body {
@@ -49,6 +111,13 @@ div {
     top: 50%;
     transform: translate(-50%, 10%);
     width: auto !important;
+  }
+
+  &.single-pic {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+
   }
 }
 
@@ -68,6 +137,8 @@ input {
 img {
   &.picture-preview-image {
     height: 200px;
+    margin: 7px;
+    object-fit: cover;
     width: 200px;
 
     &:hover {
@@ -77,8 +148,11 @@ img {
   }
 
   &.single-pic-image {
-    height: auto;
-    max-width: 60vw !important;
+    max-height: 60vh;
+    max-width: 80vw;
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 
@@ -180,16 +254,4 @@ img {
   display: flex;
   font-size: 72px;
   justify-content: center;
-}
-
-.edit-pencil {
-  position: absolute;
-  bottom: 2%;
-  left: 1vw;
-}
-
-.close-button {
-  position: absolute;
-  bottom: 2%;
-  left: 4vw;
 }
