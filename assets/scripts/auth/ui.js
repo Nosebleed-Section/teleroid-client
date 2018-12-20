@@ -23,7 +23,6 @@ const signUpFailure = function (error) {
   $('#sign-up-message').text('Error on sign up')
   $('#sign-up-message').removeClass('success')
   $('#sign-up-message').addClass('failure')
-  console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
@@ -39,11 +38,10 @@ const signInSuccess = function (data) {
   store.user = data.user
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#sign-in-message').text('Error on sign in')
   $('#sign-in-message').removeClass('success')
   $('#sign-in-message').addClass('failure')
-  console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {
@@ -63,7 +61,6 @@ const signOutFailure = function (error) {
   $('#sign-out-message').text('Error on sign out')
   $('#sign-out-message').removeClass('success')
   $('#sign-out-message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function () {
@@ -80,7 +77,6 @@ const changePasswordFailure = function (error) {
   $('#change-password-message').text('Error on change password')
   $('#change-password-message').removeClass('success')
   $('#change-password-message').addClass('failure')
-  console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {
