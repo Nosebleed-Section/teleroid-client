@@ -63,6 +63,10 @@ const onDeletePicture = (event) => {
     .catch(ui.onDeletePictureFailure)
 }
 
+// api.getOnePicture($('.single-pic-image').data('id'))
+//   .then(ui.displayOneImage)
+//   .catch(console.error)
+
 module.exports = {
   onFormSubmit,
   onGetAllPictures,

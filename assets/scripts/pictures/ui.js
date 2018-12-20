@@ -34,6 +34,7 @@ const onGetAllUserPicturesSuccess = function (data) {
 }
 
 const displayOneImage = (data) => {
+  console.log('inside displayOneImage')
   $('#display-comments').html('')
   console.log('data is', data)
   $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)

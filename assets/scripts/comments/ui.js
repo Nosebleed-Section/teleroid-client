@@ -1,13 +1,6 @@
-const picApi = require('./../pictures/api.js')
-const picUi = require('./../pictures/ui.js')
-
 const onDeleteCommentSuccess = () => {
   $('#comment-message').html('comment successfully destroyed')
   // $('#delete-comment').trigger('reset')
-  setTimeout(() => {
-    picApi.getOnePicture($('.single-pic-image').data('id'))
-      .then(picUi.displayOneImage)
-  }, 2000)
 }
 
 const onDeleteCommentFailure = (response) => {
@@ -18,8 +11,6 @@ const onDeleteCommentFailure = (response) => {
 const onUpdateCommentSuccess = (response) => {
   $('#content').html('you successfully changed  the comment')
   $('#update-comment').trigger('reset')
-  picApi.getOnePicture($('.single-pic-image').data('id'))
-    .then(picUi.displayOneImage)
 }
 
 const onUpdateCommentFailure = (response) => {
@@ -29,8 +20,6 @@ const onUpdateCommentFailure = (response) => {
 
 const onCreateCommentSuccess = () => {
   $('#comment-message').html('you added a comment')
-  picApi.getOnePicture($('.single-pic-image').data('id'))
-    .then(picUi.displayOneImage)
   $('#create-comment').trigger('reset')
 }
 

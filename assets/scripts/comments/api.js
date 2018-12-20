@@ -41,7 +41,16 @@ const show = function (id) {
   })
 }
 
+const getOnePicture = (id) => {
+  console.log('inside getOnePicture')
+  return $.ajax({
+    url: config.apiUrl + '/pictures/' + id,
+    method: 'GET'
+  })
+}
+
 module.exports = {
+  getOnePicture,
   destroy,
   update,
   create,
