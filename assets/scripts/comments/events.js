@@ -67,7 +67,10 @@ const refreshOneImage = (data) => {
       return data
     })
     .then(data => refreshImageContents(data.picture.comments))
-    .catch(console.error)
+    .catch((error) => {
+      $('#single-pic').html(`<p class="failure">Error: could not load image data</p>`)
+      console.error(error)
+    })
 }
 
 const refreshImageContents = (comments) => {
@@ -85,7 +88,10 @@ const refreshImageContents = (comments) => {
         }
         $('#display-comments').append('<br />')
       })
-      .catch(console.err)
+      .catch((error) => {
+        $('#display-comments').html(`<p class="failure">Error: could not load comment data</p>`)
+        console.error(error)
+      })
   })
   $('#showPicModal').modal('show')
 }
@@ -102,7 +108,10 @@ const onEditPencilClick = (event) => {
       .then(() => {
         refreshOneImage($('.single-pic-image').data('id'))
       })
-      .catch(console.error)
+      .catch((error) => {
+        $('#display-comments').html(`<p class="failure">Error: could not refresh image</p>`)
+        console.error(error)
+      })
   })
 }
 
