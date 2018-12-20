@@ -53,7 +53,7 @@ const onCreateComment = function (event) {
 const refreshOneImage = (data) => {
   api.getOnePicture(data)
     .then((data) => {
-      console.log('inside displayOneImage')
+      console.log('inside refreshOneImage')
       $('#display-comments').html('')
       console.log('data is', data)
       $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
@@ -78,15 +78,13 @@ const refreshOneImage = (data) => {
 }
 
 const refreshImageContents = (comments) => {
+  console.log('inside refreshImageContents')
   comments.forEach(comment => {
-    console.log('in forEach, comment is', comment)
     api.show(comment)
       .then(comment => {
-        console.log('comment is', comment)
         $('#display-comments').append(`${comment.username}: <span class="comment-div" id="${comment._id}">${comment.content}</span>`)
         if (store.user) {
           if (store.user._id === comment.owner) {
-            console.log('comment._id is ', comment._id)
             $('#display-comments').append(`<img class="comment-edit-pencil" src="../../public/images/pencil-edit-button-gray24.png" data-id="${comment._id}">`)
             $('#display-comments').append(`<img class="comment-close-button" src="../../public/images/close-x-gray24.png" data-id="${comment._id}">`)
             $('.comment-edit-pencil').on('click', onEditPencilClick)
