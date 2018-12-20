@@ -19,13 +19,14 @@ const signUpSuccess = function (data) {
   store.user = data.user
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#sign-up-message').text('Error on sign up')
   $('#sign-up-message').removeClass('success')
   $('#sign-up-message').addClass('failure')
 }
 
 const signInSuccess = function (data) {
+  $('#my-photos').removeClass('d-none')
   $('#sign-in-message').text('Signed in successfully')
   $('#sign-in-message').removeClass('failure')
   $('#sign-in-message').addClass('success')
@@ -54,6 +55,8 @@ const signOutSuccess = function () {
   }, 2000)
   $('.startButtons').removeClass('d-none')
   $('.signedInButtons').addClass('d-none')
+  $('#my-photos').addClass('d-none')
+  $('#all-photos').addClass('d-none')
   store.user = null
 }
 

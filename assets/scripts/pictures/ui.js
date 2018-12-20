@@ -9,6 +9,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const allPicturesTemplate = require('../templates/pictures.handlebars')
 
 const onGetAllPicturesSuccess = function (data) {
+  $('#whose-pics-div').html(`all pictures`)
   const usablePics = data.pictures.filter(picture => {
     return picture.url
   })
@@ -22,6 +23,7 @@ const onGetAllPicturesSuccess = function (data) {
 }
 
 const onGetAllUserPicturesSuccess = function (data) {
+  $('#whose-pics-div').html(`${store.user.username.toLowerCase()}'s pictures`)
   const usablePics = data.pictures.filter(picture => {
     return (picture.url && picture.owner === store.user._id)
   })
@@ -92,7 +94,7 @@ const onEditPencilClick = (event) => {
       .then(() => {
         api.getOnePicture($('.single-pic-image').data('id'))
           .then(displayOneImage)
-          .catch((error) => {
+          .catch(() => {
             $('#display-comments').html(`<p class="failure">Error: could not refresh image</p>`)
           })
       })

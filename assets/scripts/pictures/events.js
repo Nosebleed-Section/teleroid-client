@@ -24,16 +24,23 @@ const onModifyFormSubmit = (event) => {
   const updateForm = document.getElementById('edit-photo-form-data')
   const formData = new FormData(updateForm)
   formData.set('id', $('.single-pic-image').data('id'))
-  if (formData.title === '' && formData.image === undefined) {
-    $('#edit-pic-message').html('please add image or title')
-  } else {
-    api.sendModifyFormData(formData)
-      .then(ui.onUpdateFormSubmitSuccess)
-      .catch(ui.onUpdateFormSubmitFailure)
-  }
+  api.sendModifyFormData(formData)
+    .then(ui.onUpdateFormSubmitSuccess)
+    .then(() => {
+      if (store.view === 'user pics') {
+        onGetAllUserPictures()
+      } else {
+        onGetAllPictures()
+      }
+    })
+    .catch(ui.onUpdateFormSubmitFailure)
 }
 
 const onGetAllPictures = (event) => {
+  if (store.user) {
+    $('#my-photos').removeClass('d-none')
+    $('#all-photos').addClass('d-none')
+  }
   api.getAllPictures()
     .then(ui.onGetAllPicturesSuccess)
     .then(() => { ui.displayPageOfPictures(0) })
@@ -41,6 +48,10 @@ const onGetAllPictures = (event) => {
 }
 
 const onGetAllUserPictures = (event) => {
+  if (store.user) {
+    $('#my-photos').addClass('d-none')
+    $('#all-photos').removeClass('d-none')
+  }
   api.getAllPictures()
     .then(ui.onGetAllUserPicturesSuccess)
     .then(() => { ui.displayPageOfPictures(0) })

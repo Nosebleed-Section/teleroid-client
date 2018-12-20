@@ -16,9 +16,8 @@ const sendFormData = data => {
 }
 
 const sendModifyFormData = data => {
-  const id = data.get('id')
   return $.ajax({
-    url: config.apiUrl + '/pictures/' + id,
+    url: config.apiUrl + '/pictures/' + data.get('id'),
     method: 'PATCH',
     processData: false,
     contentType: false,

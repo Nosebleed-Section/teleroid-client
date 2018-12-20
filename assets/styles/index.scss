@@ -100,6 +100,11 @@ div {
     }
   }
 
+  &.modal-content {
+    border-radius: 12px !important;
+
+  }
+
   &.show-pic-modal-body {
     display: flex;
   }
@@ -117,7 +122,14 @@ div {
     display: flex;
     flex-direction: column;
     background-color: black;
+  }
 
+  &.whose-pics-div {
+    color: white;
+    font-size: 20px;
+    top: -3vh;
+    left: 12vw;
+    position: relative;
   }
 }
 
@@ -132,14 +144,24 @@ input {
     height: 40px;
     width: 150px;
   }
+
+  &[type='submit'] {
+    background-color: $telaroid-green;
+    border: 1px solid $telaroid-green;
+    border-radius: 4px;
+    color: white;
+    margin: 7px 0;
+  }
 }
 
 img {
   &.picture-preview-image {
-    height: 200px;
-    margin: 7px;
+    height: 17vw;
+    margin: 4px;
     object-fit: cover;
-    width: 200px;
+    width: 17vw;
+
+    // were 200 x 200
 
     &:hover {
       cursor: pointer;
@@ -153,6 +175,13 @@ img {
     &:hover {
       opacity: .8;
     }
+  }
+}
+
+nav {
+  &.navbar {
+    margin-left: 5vw;
+    margin-right: 2vw;
   }
 }
 
@@ -254,4 +283,8 @@ img {
   display: flex;
   font-size: 72px;
   justify-content: center;
+}
+
+#showPicModalLabel {
+  margin-left: 15px;
 }

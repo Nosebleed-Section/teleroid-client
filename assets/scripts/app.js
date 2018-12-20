@@ -31,4 +31,5 @@ $(() => {
   })
 
   $('#my-photos').on('click', picEvents.onGetAllUserPictures)
+  $('#all-photos').on('click', picEvents.onGetAllPictures)
 })
