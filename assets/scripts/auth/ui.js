@@ -57,7 +57,7 @@ const signOutSuccess = function () {
   store.user = null
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('#sign-out-message').text('Error on sign out')
   $('#sign-out-message').removeClass('success')
   $('#sign-out-message').addClass('failure')
@@ -73,7 +73,7 @@ const changePasswordSuccess = function () {
   }, 3000)
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('#change-password-message').text('Error on change password')
   $('#change-password-message').removeClass('success')
   $('#change-password-message').addClass('failure')

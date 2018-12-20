@@ -70,7 +70,6 @@ const displayImageContents = (comments) => {
       })
       .catch((error) => {
         $('#display-comments').html(`<p class="failure">Error: could not load comment data</p>`)
-        console.error(error)
       })
   })
   $('#showPicModal').modal('show')
@@ -90,7 +89,6 @@ const onEditPencilClick = (event) => {
           .then(displayOneImage)
           .catch((error) => {
             $('#display-comments').html(`<p class="failure">Error: could not refresh image</p>`)
-            console.error(error)
           })
       })
   })
@@ -150,7 +148,6 @@ const onUploadFormSubmitSuccess = () => {
 }
 
 const onUploadFormSubmitFailure = (response) => {
-  console.error(response)
   $('#upload-message').html('could not upload pic')
 }
 
@@ -162,7 +159,6 @@ const onUpdateFormSubmitSuccess = () => {
 }
 
 const onUpdateFormSubmitFailure = (response) => {
-  console.error(response)
   $('#upload-message').html('could not update pic')
 }
 

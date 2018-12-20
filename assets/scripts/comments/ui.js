@@ -3,7 +3,6 @@ const onDeleteCommentSuccess = () => {
 }
 
 const onDeleteCommentFailure = (response) => {
-  console.error(response)
   $('#comment-message').html('something went wrong, try again.')
 }
 
@@ -13,7 +12,6 @@ const onUpdateCommentSuccess = (response) => {
 }
 
 const onUpdateCommentFailure = (response) => {
-  console.error(response)
   $('#comment-message').html('something went wrong, try again.')
 }
 
@@ -23,7 +21,6 @@ const onCreateCommentSuccess = () => {
 }
 
 const onCreateCommentFailure = (response) => {
-  console.error(response)
   $('#comment-message').html('something went wrong, try again.')
 }
 
