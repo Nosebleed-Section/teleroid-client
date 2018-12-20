@@ -72,8 +72,9 @@ const refreshOneImage = (data) => {
           })
         }
       }
-      refreshImageContents(data.picture.comments)
+      return data
     })
+    .then(data => refreshImageContents(data.picture.comments))
     .catch(console.error)
 }
 
