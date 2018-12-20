@@ -1,6 +1,5 @@
 const onDeleteCommentSuccess = () => {
   $('#comment-message').html('comment successfully destroyed')
-  // $('#delete-comment').trigger('reset')
 }
 
 const onDeleteCommentFailure = (response) => {

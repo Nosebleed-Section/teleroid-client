@@ -16,22 +16,8 @@ const signUpSuccess = function (data) {
     resetForms()
     $('#signUpModal').modal('hide')
   }, 2000)
-  console.log('signUpSuccess ran. Data is :', data)
   store.user = data.user
 }
-
-// const signUpSuccess = (data) => {
-//   console.log('Sign up successful! data is', data)
-//   // close modal on sign up success
-//   $('#signUpModal').modal('hide')
-// }
-
-// const signInSuccess = (data) => {
-//   store.user = data.user
-//   console.log('Sign in successful! data.user is', data.user)
-//   // close modal on sign in success
-//   $('#signInModal').modal('hide')
-// }
 
 const signUpFailure = function (error) {
   $('#sign-up-message').text('Error on sign up')
@@ -50,7 +36,6 @@ const signInSuccess = function (data) {
     resetForms()
     $('#signInModal').modal('hide')
   }, 2000)
-  console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
 
@@ -71,7 +56,6 @@ const signOutSuccess = function () {
   }, 2000)
   $('.startButtons').removeClass('d-none')
   $('.signedInButtons').addClass('d-none')
-  console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 
@@ -90,7 +74,6 @@ const changePasswordSuccess = function () {
     resetForms()
     $('#changePasswordModal').modal('hide')
   }, 3000)
-  console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
 const changePasswordFailure = function (error) {

@@ -34,7 +34,6 @@ const create = function (data) {
 }
 
 const show = function (id) {
-  console.log(config.apiUrl + '/comments/' + id)
   return $.ajax({
     url: config.apiUrl + '/comments/' + id,
     method: 'GET'
@@ -42,7 +41,6 @@ const show = function (id) {
 }
 
 const getOnePicture = (id) => {
-  console.log('inside getOnePicture')
   return $.ajax({
     url: config.apiUrl + '/pictures/' + id,
     method: 'GET'

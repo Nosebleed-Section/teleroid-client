@@ -1,19 +1,5 @@
 const store = require('../store.js')
 const config = require('../config.js')
-// const authEvents = require('./events.js')
-
-// const sendFormData = data => {
-//   return $.ajax({
-//     url: config.apiUrl + '/pictures',
-//     method: 'POST',
-//     processData: false,
-//     contentType: false,
-//     data,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 
 /// /////////////////////
 //                    //
@@ -36,7 +22,6 @@ const changePassword = data => {
 // signIn() logs in an existing user on the API, returning an authentication
 // token
 const signIn = data => {
-  console.log('inside signIn')
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -57,7 +42,6 @@ const signOut = () => {
 
 // signUp() creates a new user on the API
 const signUp = data => {
-  console.log('inside signUp')
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',

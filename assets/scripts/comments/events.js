@@ -4,16 +4,12 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 const onDeleteCommentClick = function (event) {
-  console.log('in onDeleteCommentClick')
   event.preventDefault()
-  console.log(event.target)
-  console.log($(event.target).data('id'))
   store.deleteCommentId = $(event.target).data('id')
   $('#deleteCommentConfirmModal').modal('show')
 }
 
 const onDeleteCommentSubmit = function (event) {
-  console.log('in onDeleteCommentSubmit')
   event.preventDefault()
   const data = store.deleteCommentId
   api.destroy(data)
@@ -53,21 +49,17 @@ const onCreateComment = function (event) {
 const refreshOneImage = (data) => {
   api.getOnePicture(data)
     .then((data) => {
-      console.log('inside refreshOneImage')
       $('#display-comments').html('')
-      console.log('data is', data)
       $('#single-pic').html(`<img class="single-pic-image" src=${data.picture.url} data-id=${data.picture._id}>`)
       if (store.user) {
         if (store.user._id === data.picture.owner) {
           $('#single-pic').append(`<img class="edit-pencil" src="../../public/images/pencil-edit-button-gray24.png">`)
           $('#single-pic').append(`<img class="close-button" src="../../public/images/close-x-gray24.png">`)
           $('.edit-pencil').on('click', () => {
-            console.log('insside edit pencil')
             $('#showPicModal').modal('hide')
             $('#editPictureModal').modal('show')
           })
           $('.close-button').on('click', () => {
-            console.log('insssssside close button')
             $('#deletePictureConfirmModal').modal('show')
           })
         }
@@ -79,7 +71,6 @@ const refreshOneImage = (data) => {
 }
 
 const refreshImageContents = (comments) => {
-  console.log('inside refreshImageContents')
   comments.forEach(comment => {
     api.show(comment)
       .then(comment => {
@@ -100,14 +91,11 @@ const refreshImageContents = (comments) => {
 }
 
 const onEditPencilClick = (event) => {
-  console.log('in onEditPencilClick')
   const commentTarget = $(event.target).data('id')
   const commentText = $(`#${commentTarget}`).text()
   $(`#${commentTarget}`).html(`<form id="comment-input-${commentTarget}" class="comment-input"><input type="text" name="comment[content]" class="comment-input-text" value="${commentText}" required></form>`)
   $(`#comment-input-${commentTarget}`).on('submit', (event) => {
     event.preventDefault()
-    console.log('event is', event)
-    console.log('event.target is', event.target)
     const data = getFormFields(event.target)
     data.comment.id = commentTarget
     api.update(data)

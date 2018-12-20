@@ -24,9 +24,6 @@ const onModifyFormSubmit = (event) => {
   const updateForm = document.getElementById('edit-photo-form-data')
   const formData = new FormData(updateForm)
   formData.set('id', $('.single-pic-image').data('id'))
-  for (let pair of formData.entries()) {
-      console.log(pair[0]+ ', '+ pair[1])
-  }
   if (formData.title === '' && formData.image === undefined) {
     $('#edit-pic-message').html('please add image or title')
   } else {

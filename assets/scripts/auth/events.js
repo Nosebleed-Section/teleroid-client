@@ -1,4 +1,3 @@
-const store = require('../store.js')
 const api = require('./api.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const ui = require('./ui.js')
@@ -22,8 +21,6 @@ const onSignIn = (event) => {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
-
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -31,14 +28,11 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
-
   const data = getFormFields(this)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-
 
 module.exports = {
   onSignIn,
