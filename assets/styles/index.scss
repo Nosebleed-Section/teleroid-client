@@ -30,8 +30,12 @@ div {
   }
 
   &.display-comments {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
     height: 200px;
+    margin-left: 16px;
+    overflow-y: scroll;
+    width: 300px;
   }
 
   &.show-pic-modal-body {
@@ -48,6 +52,18 @@ div {
   }
 }
 
+form {
+  &.comment-input {
+    display: inline;
+  }
+}
+
+input {
+  &.comment-input-text {
+    height: 40px;
+    width: 150px;
+  }
+}
 
 img {
   &.picture-preview-image {
