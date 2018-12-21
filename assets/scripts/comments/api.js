@@ -36,7 +36,8 @@ const create = function (data) {
 const show = function (id) {
   return $.ajax({
     url: config.apiUrl + '/comments/' + id,
-    method: 'GET'
+    method: 'GET',
+    async: false
   })
 }
 
