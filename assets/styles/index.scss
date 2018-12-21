@@ -27,7 +27,7 @@ body {
 div {
   &.close-button {
     align-self: flex-end;
-    background-image: url('../../public/images/filled/close-x-gray512cf.png');
+    background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/filled/close-x-gray512cf.png');
     background-size: cover;
     height: 25px;
     margin-left: -10px;
@@ -37,13 +37,13 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/filled/close-x-red512cf.png');
+      background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/filled/close-x-red512cf.png');
     }
   }
 
   &.comment-close-button {
     align-self: flex-end;
-    background-image: url('../../public/images/close-x-gray24.png');
+    background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/close-x-gray24.png');
     background-size: cover;
     display: inline-block;
     height: 13px;
@@ -51,13 +51,13 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/close-x-gray24.png');
+      background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/close-x-gray24.png');
     }
   }
 
   &.comment-edit-pencil {
     align-self: flex-end;
-    background-image: url('../../public/images/pencil-gray512c.png');
+    background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/pencil-gray512c.png');
     background-size: cover;
     display: inline-block;
     height: 13px;
@@ -65,7 +65,7 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/pencil-blue512c.png');
+      background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/pencil-blue512c.png');
     }
   }
 
@@ -86,7 +86,7 @@ div {
 
   &.edit-pencil {
     align-self: flex-end;
-    background-image: url('../../public/images/filled/pencil-gray512cf.png');
+    background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/filled/pencil-gray512cf.png');
     background-size: cover;
     height: 25px;
     margin-left: -46px;
@@ -96,7 +96,7 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/filled/pencil-blue512cf.png');
+      background-image: url('https://github.com/Nosebleed-Section/teleroid-client/blob/master/public/images/filled/pencil-blue512cf.png');
     }
   }
 
