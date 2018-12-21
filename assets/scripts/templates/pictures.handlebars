@@ -1,0 +1,11 @@
+<tbody>
+{{#each gridrow}}
+    <tr>
+        {{#each this}}
+          {{#if this.url}}
+            <td><img class="picture-preview-image" src="{{this.url}}" data-id="{{this._id}}"></td>
+          {{/if}}
+        {{/each}}
+    </tr>
+{{/each}}
+</tbody>
