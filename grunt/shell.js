@@ -14,7 +14,9 @@ const checkGitIgnore = `
 const ghPagesList = [
   'index.html',
   'favicon.ico',
-  'public'
+  'public/',
+  'public/images',
+  'public/images/filled/'
 ].join(' ')
 
 module.exports = {
