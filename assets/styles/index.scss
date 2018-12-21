@@ -27,7 +27,7 @@ body {
 div {
   &.close-button {
     align-self: flex-end;
-    background-image: url('../../public/images/close-x-gray24.png');
+    background-image: url('../../public/images/filled/close-x-gray512cf.png');
     background-size: cover;
     height: 25px;
     margin-left: -10px;
@@ -37,7 +37,7 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/close-x-red512.png');
+      background-image: url('../../public/images/filled/close-x-red512cf.png');
     }
   }
 
@@ -86,7 +86,7 @@ div {
 
   &.edit-pencil {
     align-self: flex-end;
-    background-image: url('../../public/images/pencil-gray512c.png');
+    background-image: url('../../public/images/filled/pencil-gray512cf.png');
     background-size: cover;
     height: 25px;
     margin-left: -46px;
@@ -96,7 +96,7 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('../../public/images/pencil-blue512c.png');
+      background-image: url('../../public/images/filled/pencil-blue512cf.png');
     }
   }
 
