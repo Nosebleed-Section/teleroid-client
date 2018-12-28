@@ -30,9 +30,9 @@ div {
     background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/close-x-gray512cf.png');
     background-size: cover;
     height: 25px;
-    margin-left: -10px;
-    margin-top: 10px;
     position: absolute;
+    right: 345px;
+    top: 25px;
     width: 25px;
     z-index: 100;
 
@@ -89,9 +89,9 @@ div {
     background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/pencil-gray512cf.png');
     background-size: cover;
     height: 25px;
-    margin-left: -46px;
-    margin-top: 10px;
     position: absolute;
+    right: 375px;
+    top: 25px;
     width: 25px;
     z-index: 100;
 
@@ -102,7 +102,6 @@ div {
 
   &.modal-content {
     border-radius: 12px !important;
-
   }
 
   &.show-pic-modal-body {
@@ -119,17 +118,17 @@ div {
   }
 
   &.single-pic {
+    background-color: black;
     display: flex;
     flex-direction: column;
-    background-color: black;
   }
 
   &.whose-pics-div {
     color: white;
     font-size: 20px;
-    top: -3vh;
     left: 12vw;
     position: relative;
+    top: -3vh;
   }
 }
 
@@ -170,10 +169,11 @@ img {
   }
 
   &.single-pic-image {
-    min-width: 10vw;
-    max-height: 10vh;
     max-height: 60vh;
     max-width: 80vw;
+    min-height: 10vh;
+    min-width: 10vw;
+
     &:hover {
       opacity: .8;
     }
@@ -189,10 +189,9 @@ nav {
 
 .nav-ul {
   position: absolute;
-  top: 65px;
   right: -10px;
-  // display: inline-block;
   text-align: left;
+  top: 65px;
   width: 15vw;
   z-index: 100;
 
