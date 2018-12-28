@@ -170,6 +170,8 @@ img {
   }
 
   &.single-pic-image {
+    min-width: 10vw;
+    max-height: 10vh;
     max-height: 60vh;
     max-width: 80vw;
     &:hover {

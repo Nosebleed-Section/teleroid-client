@@ -18,6 +18,7 @@ const update = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
+    async: false,
     data
   })
 }

@@ -28,9 +28,9 @@ const onModifyFormSubmit = (event) => {
     .then(ui.onUpdateFormSubmitSuccess)
     .then(() => {
       if (store.view === 'user pics') {
-        onGetAllUserPictures()
+        setTimeout(onGetAllUserPictures, 2000)
       } else {
-        onGetAllPictures()
+        setTimeout(onGetAllPictures, 2000)
       }
     })
     .catch(ui.onUpdateFormSubmitFailure)
