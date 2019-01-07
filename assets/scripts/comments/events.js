@@ -67,7 +67,7 @@ const refreshOneImage = (data) => {
       }
       return data
     })
-    .then(data => setTimeout(() => refreshImageContents(data.picture.comments), 100))
+    .then(data => setTimeout(() => refreshImageContents(data.picture.comments), 200))
     .catch(() => {
       $('#single-pic').html(`<p class="failure">Error: could not load image data</p>`)
     })
