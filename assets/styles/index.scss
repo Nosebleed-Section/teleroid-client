@@ -31,13 +31,15 @@ div {
     background-size: cover;
     height: 25px;
     position: absolute;
-    right: 345px;
+    margin-left: -15px;
+    // right: 345px;
     top: 25px;
     width: 25px;
     z-index: 100;
 
     &:hover {
       background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/close-x-red512cf.png');
+      cursor: pointer;
     }
   }
 
@@ -51,7 +53,8 @@ div {
     z-index: 100;
 
     &:hover {
-      background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/close-x-gray24.png');
+      background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/close-x-red24.png');
+      cursor: pointer;
     }
   }
 
@@ -66,6 +69,7 @@ div {
 
     &:hover {
       background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/pencil-blue512c.png');
+      cursor: pointer;
     }
   }
 
@@ -78,10 +82,10 @@ div {
   &.display-comments {
     border: 1px solid $light-grey;
     border-radius: 7px;
-    height: 200px;
+    height: 20vw;
     margin-left: 16px;
     overflow-y: scroll;
-    width: 300px;
+    width: 17vw;
   }
 
   &.edit-pencil {
@@ -90,13 +94,15 @@ div {
     background-size: cover;
     height: 25px;
     position: absolute;
-    right: 375px;
+    margin-left: -47px;
+    // right: 375px;
     top: 25px;
     width: 25px;
     z-index: 100;
 
     &:hover {
       background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/pencil-blue512cf.png');
+      cursor: pointer;
     }
   }
 
@@ -129,6 +135,14 @@ div {
     left: 12vw;
     position: relative;
     top: -3vh;
+    width: 400px;
+  }
+}
+
+fieldset {
+  &.comment-fieldset {
+    margin: 10px 17px;
+    max-width: 10vw;
   }
 }
 
@@ -151,6 +165,10 @@ input {
     color: white;
     margin: 7px 0;
   }
+
+  &.comment-box {
+    max-width: 13vw;
+  }
 }
 
 img {
@@ -169,10 +187,11 @@ img {
   }
 
   &.single-pic-image {
-    max-height: 60vh;
-    max-width: 80vw;
-    min-height: 10vh;
-    min-width: 10vw;
+    height: 70vh;
+    width: 70vw;
+    // min-height: 10vh;
+    // min-width: 10vw;
+    object-fit: cover;
 
     &:hover {
       opacity: .8;
@@ -184,6 +203,7 @@ nav {
   &.navbar {
     margin-left: 5vw;
     margin-right: 2vw;
+    position: sticky;
   }
 }
 
