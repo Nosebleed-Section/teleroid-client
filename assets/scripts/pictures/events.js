@@ -23,6 +23,12 @@ const onModifyFormSubmit = (event) => {
   event.preventDefault()
   const updateForm = document.getElementById('edit-photo-form-data')
   const formData = new FormData(updateForm)
+  for (const pair of formData.values()) {
+    if (!(pair[0]) && !(pair[1])) {
+      $('#edit-picture-message').text('Must update at least one field')
+      return null
+    }
+  }
   formData.set('id', $('.single-pic-image').data('id'))
   api.sendModifyFormData(formData)
     .then(ui.onUpdateFormSubmitSuccess)
