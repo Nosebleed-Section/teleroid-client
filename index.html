@@ -1,315 +1,296 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Telaroid Client</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Telaroid Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
 
-    <!-- body -->
-    <body>
+  <!-- body -->
+  <body>
 
-<!--Navbar-->
+    <!--Navbar-->
     <nav class="navbar navbar-dark mb-4">
 
-  <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><img src="./public/images/telaroid_two-part-cube-13.png" alt="telaroid-cube" class="spin" /><img src="./public/images/telaroid_two-part-text-13L4.png" alt="telaroid-text" /></a>
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#"><img src="./public/images/telaroid_two-part-cube-13.png" alt="telaroid-cube" class="spin" /><img src="./public/images/telaroid_two-part-text-13L4.png" alt="telaroid-text" /></a>
 
-  <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
-    <div class="animated-icon1"><span></span><span></span><span></span></div>
-    </button>
+      <!-- Hamburger nav button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+              aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon1"><span></span><span></span><span></span></div>
+      </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse nav-ul" id="navbarSupportedContent20">
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse nav-ul" id="navbarSupportedContent20">
 
-    <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-      <!-- <li class="nav-item active">
-        <a class="nav-link" href="#">home <span class="sr-only">(current)</span></a>
-      </li> -->
-      <li id="signed-up" class="nav-item startButtons">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">sign-up</a>
-      </li>
-      <li id="signed-in" class="nav-item startButtons">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">sign-in</a>
-      </li>
-      <!-- unfinished my photos nav button -->
-      <li id="my-photos" class="nav-item d-none">
-        <a class="nav-link" href="#">my photos</a>
-      </li>
-      <li id="all-photos" class="nav-item d-none">
-        <a class="nav-link" href="#">view all photos</a>
-      </li>
-      <li class="nav-item signedInButtons d-none">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#changePasswordModal">account</a>
-      </li>
-      <li class="nav-item signedInButtons d-none">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#uploadModal">upload</a>
-      </li>
-      <li class="nav-item signedInButtons d-none">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#signOutModal">sign-out</a>
-      </li>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li id="signed-up" class="nav-item startButtons">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">sign-up</a>
+          </li>
+          <li id="signed-in" class="nav-item startButtons">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signInModal">sign-in</a>
+          </li>
+          <li id="my-photos" class="nav-item d-none">
+            <a class="nav-link" href="#">my photos</a>
+          </li>
+          <li id="all-photos" class="nav-item d-none">
+            <a class="nav-link" href="#">view all photos</a>
+          </li>
+          <li class="nav-item signedInButtons d-none">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#changePasswordModal">account</a>
+          </li>
+          <li class="nav-item signedInButtons d-none">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#uploadModal">upload</a>
+          </li>
+          <li class="nav-item signedInButtons d-none">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#signOutModal">sign-out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    </ul>
-    <!-- Links -->
-
-  </div>
-  <!-- Collapsible content -->
-
-</nav>
-
-
-        <!-- ///// END navbar 3 ///// -->
-
-
-
-
-<!-- SIGN UP MODAL BEGINS -->
-        <div class="modal fade" id="signUpModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="signUpModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-up">
-                      <fieldset>
-                        <legend>sign up</legend>
-                          <input type="text" name="credentials[username]" placeholder="username" autocomplete="username">
-                          <input type="text" name="credentials[email]" placeholder="email" autocomplete="email">
-                          <input type="password" name="credentials[password]" placeholder="password" autocomplete="new-password">
-                          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="new-password">
-                          <br>
-                          <input type="submit" value="sign up" class="modal-signup">
-                      </fieldset>
-                  </form>
-                  <div id="sign-up-message" class="message"></div>
-              </div>
+    <!-- SIGN UP MODAL BEGINS -->
+    <div class="modal fade" id="signUpModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             </div>
-          </div>
-        </div>
-
-        <!-- SIGN IN MODAL BEGINS -->
-        <div class="modal fade" id="signInModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="signInModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-in">
-                    <fieldset>
-                      <legend>sign in</legend>
+            <div class="modal-body">
+              <form id="sign-up">
+                  <fieldset>
+                    <legend>sign up</legend>
+                      <input type="text" name="credentials[username]" placeholder="username" autocomplete="username">
                       <input type="text" name="credentials[email]" placeholder="email" autocomplete="email">
-                      <input type="password" name="credentials[password]" placeholder="password" autocomplete="current-password">
+                      <input type="password" name="credentials[password]" placeholder="password" autocomplete="new-password">
+                      <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="new-password">
                       <br>
-                      <input type="submit" value="sign in" class="modal-signin">
-                    </fieldset>
-                  </form>
-                  <div id="sign-in-message" class="message"></div>
-                </div>
-            </div>
+                      <input type="submit" value="sign up" class="modal-signup">
+                  </fieldset>
+              </form>
+              <div id="sign-up-message" class="message"></div>
           </div>
         </div>
-
-        <!-- CHANGE PASSWORD MODAL BEGINS -->
-  <div class="modal fade" id="changePasswordModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="changePasswordModalLabel"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <div class="modal-body">
-            <form id="change-password">
-              <fieldset>
-                <legend>change password</legend>
-                <input type="password" name="passwords[old]" placeholder="old password" autocomplete="current-password">
-                <input type="password" name="passwords[new]" placeholder="new password" autocomplete="new-password">
-                <br>
-                <input type="submit" value="change" class="modal-change-password">
-              </fieldset>
-            </form>
-            <div id="change-password-message" class="message"></div>
-         </div>
       </div>
     </div>
-  </div>
 
-
-        <!-- UPLOAD MODAL BEGINS -->
-        <div class="modal fade" id="uploadModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="uploadModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                  <form id="multipart-form-data" enctype="multipart/form-data">
-                    <fieldset>
-                      <legend>upload photo</legend>
-                      <label>
-                        title
-                        <input type="text" name="title" placeholder="title">
-                      </label>
-                      <label>
-                        image
-                        <input type="file" name="image">
-                      </label>
-                      <input type="submit" name="submit" value="upload">
-                    </fieldset>
-                  </form>
-                  <div id="upload-message" class="message"></div>
-                </div>
+    <!-- SIGN IN MODAL BEGINS -->
+    <div class="modal fade" id="signInModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signInModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             </div>
-          </div>
-        </div>
-
-        <!-- EDIT PICTURE MODAL BEGINS -->
-        <div class="modal fade" id="editPictureModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="editPictureModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                  <form id="edit-photo-form-data" enctype="multipart/form-data">
-                    <fieldset>
-                      <legend>edit photo</legend>
-                      <label>
-                        change title
-                        <input type="text" name="title" placeholder="new title">
-                      </label>
-                      <label>
-                        change image
-                        <input type="file" name="image">
-                      </label>
-                      <input type="submit" name="submit" value="upload new image">
-                    </fieldset>
-                  </form>
-                  <div id="edit-picture-message" class="message"></div>
-                </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>sign in</legend>
+                  <input type="text" name="credentials[email]" placeholder="email" autocomplete="email">
+                  <input type="password" name="credentials[password]" placeholder="password" autocomplete="current-password">
+                  <br>
+                  <input type="submit" value="sign in" class="modal-signin">
+                </fieldset>
+              </form>
+              <div id="sign-in-message" class="message"></div>
             </div>
-          </div>
         </div>
-
-
-<!-- SIGN OUT MODAL BEGINS -->
-<div class="modal fade" id="signOutModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signOutModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-          <form id="sign-out">
-            <fieldset>
-              <legend>definitely sign out?</legend>
-              <input type="submit" value="sign out" class="modal-signout">
-            </fieldset>
-          </form>
-          <div id="sign-out-message" class="message"></div>
       </div>
     </div>
-  </div>
-</div>
 
-      <!-- SHOWPIC MODAL BEGINS -->
-      <div class="modal fade" id="showPicModal">
-        <div class="modal-dialog">
-          <div class="modal-content show-pic-modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="showPicModalLabel"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              </div>
-              <div class="modal-body show-pic-modal-body">
-                <div class="single-pic" id="single-pic"></div>
-                <div>
-                  <div id="comments-container">
-                    <div class="display-comments" id="display-comments"></div>
-                    <form class="signedInButtons d-none" id="create-comment">
-                      <fieldset class="comment-fieldset">
-                        <label>
-                          comment:
-                          <input class="comment-box" type="text" name="comment[content]" placeholder="add comment here">
-                        </label>
-                        <input type="submit" name="submit" value="submit" class="modal-single-pic">
-                      </fieldset>
-                    </form>
-                  <div id="comment-message" class="message"></div>
-                </div>
-              </div>
+    <!-- CHANGE PASSWORD MODAL BEGINS -->
+    <div class="modal fade" id="changePasswordModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="changePasswordModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <fieldset>
+                  <legend>change password</legend>
+                  <input type="password" name="passwords[old]" placeholder="old password" autocomplete="current-password">
+                  <input type="password" name="passwords[new]" placeholder="new password" autocomplete="new-password">
+                  <br>
+                  <input type="submit" value="change" class="modal-change-password">
+                </fieldset>
+              </form>
+              <div id="change-password-message" class="message"></div>
            </div>
-          </div>
         </div>
       </div>
+    </div>
 
-      <!-- DELETE PICTURE CONFIRM MODAL -->
-      <div class="modal fadel" id="deletePictureConfirmModal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content delete-modal-content">
-            <div class="modal-body delete-modal-body">
-              <h5 class="modal-title" id="deletePictureConfirmModalTitle">
-                Delete This Picture?
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">&times;</button>
-                  <button type="button" id="delete-picture-submit" data-dismiss="modal" class="btn btn-primary">&#10004;</button>
-              </h5>
+    <!-- UPLOAD MODAL BEGINS -->
+    <div class="modal fade" id="uploadModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="uploadModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DELETE COMMENT CONFIRM MODAL -->
-
-      <div class="modal fadel" id="deleteCommentConfirmModal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content delete-modal-content">
-            <div class="modal-body delete-modal-body">
-              <h5 class="modal-title" id="deletePictureConfirmModalTitle">
-                Delete This Comment
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">&times;</button>
-                  <button type="button" id="delete-comment-submit" data-dismiss="modal" class="btn btn-primary">&#10004;</button>
-              </h5>
+            <div class="modal-body">
+              <form id="multipart-form-data" enctype="multipart/form-data">
+                <fieldset>
+                  <legend>upload photo</legend>
+                  <label>
+                    title
+                    <input type="text" name="title" placeholder="title">
+                  </label>
+                  <label>
+                    image
+                    <input type="file" name="image">
+                  </label>
+                  <input type="submit" name="submit" value="upload">
+                </fieldset>
+              </form>
+              <div id="upload-message" class="message"></div>
             </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDIT PICTURE MODAL BEGINS -->
+    <div class="modal fade" id="editPictureModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editPictureModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <form id="edit-photo-form-data" enctype="multipart/form-data">
+                <fieldset>
+                  <legend>edit photo</legend>
+                  <label>
+                    change title
+                    <input type="text" name="title" placeholder="new title">
+                  </label>
+                  <label>
+                    change image
+                    <input type="file" name="image">
+                  </label>
+                  <input type="submit" name="submit" value="upload new image">
+                </fieldset>
+              </form>
+              <div id="edit-picture-message" class="message"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN OUT MODAL BEGINS -->
+    <div class="modal fade" id="signOutModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signOutModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-out">
+                <fieldset>
+                  <legend>definitely sign out?</legend>
+                  <input type="submit" value="sign out" class="modal-signout">
+                </fieldset>
+              </form>
+              <div id="sign-out-message" class="message"></div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- SHOWPIC MODAL BEGINS -->
+    <div class="modal fade" id="showPicModal">
+      <div class="modal-dialog">
+        <div class="modal-content show-pic-modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="showPicModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body show-pic-modal-body">
+              <div class="single-pic" id="single-pic"></div>
+              <div>
+                <div id="comments-container">
+                  <div class="display-comments" id="display-comments"></div>
+                  <form class="signedInButtons d-none" id="create-comment">
+                    <fieldset class="comment-fieldset">
+                      <label>
+                        comment:
+                        <input class="comment-box" type="text" name="comment[content]" placeholder="add comment here">
+                      </label>
+                      <input type="submit" name="submit" value="submit" class="modal-single-pic">
+                    </fieldset>
+                  </form>
+                <div id="comment-message" class="message"></div>
+              </div>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELETE PICTURE CONFIRM MODAL -->
+    <div class="modal fadel" id="deletePictureConfirmModal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content delete-modal-content">
+          <div class="modal-body delete-modal-body">
+            <h5 class="modal-title" id="deletePictureConfirmModalTitle">
+              Delete This Picture?
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">&times;</button>
+                <button type="button" id="delete-picture-submit" data-dismiss="modal" class="btn btn-primary">&#10004;</button>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELETE COMMENT CONFIRM MODAL -->
+    <div class="modal fadel" id="deleteCommentConfirmModal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content delete-modal-content">
+          <div class="modal-body delete-modal-body">
+            <h5 class="modal-title" id="deletePictureConfirmModalTitle">
+              Delete This Comment
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">&times;</button>
+                <button type="button" id="delete-comment-submit" data-dismiss="modal" class="btn btn-primary">&#10004;</button>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="whose-pics-div" class="whose-pics-div"></div>
-    <div align="center" class="div-of-divs">
-    </div>
+    <div class="div-of-divs"></div>
 
   </body>
 </html>

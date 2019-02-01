@@ -30,9 +30,8 @@ div {
     background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/close-x-gray512cf.png');
     background-size: cover;
     height: 25px;
-    position: absolute;
     margin-left: -15px;
-    // right: 345px;
+    position: absolute;
     top: 25px;
     width: 25px;
     z-index: 100;
@@ -93,9 +92,8 @@ div {
     background-image: url('https://raw.githubusercontent.com/Nosebleed-Section/teleroid-client/master/public/images/filled/pencil-gray512cf.png');
     background-size: cover;
     height: 25px;
-    position: absolute;
     margin-left: -47px;
-    // right: 375px;
+    position: absolute;
     top: 25px;
     width: 25px;
     z-index: 100;
@@ -178,8 +176,6 @@ img {
     object-fit: cover;
     width: 17vw;
 
-    // were 200 x 200
-
     &:hover {
       cursor: pointer;
       opacity: .8;
@@ -188,10 +184,8 @@ img {
 
   &.single-pic-image {
     height: 70vh;
-    width: 70vw;
-    // min-height: 10vh;
-    // min-width: 10vw;
     object-fit: cover;
+    width: 70vw;
 
     &:hover {
       opacity: .8;
@@ -214,9 +208,7 @@ nav {
   top: 65px;
   width: 15vw;
   z-index: 100;
-
 }
-/* Icon 1 */
 
 .animated-icon1 {
   width: 30px;
@@ -270,10 +262,6 @@ nav {
 .animated-icon1 span:nth-child(3) {
   top: 20px;
   background: $telaroid-yellow;
-
-  // &:hover {
-  //   background: $telaroid-red;
-  // }
 }
 
 .animated-icon1.open span:nth-child(1) {

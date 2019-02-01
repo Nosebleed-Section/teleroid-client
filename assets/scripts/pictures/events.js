@@ -1,8 +1,28 @@
-// const store = require('../store.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store')
 
+///////////////////////
+//                   //
+//  PICTURES Events  //
+//                   //
+///////////////////////
+
+// onDeletePicture() fires when the user deletes a picture
+const onDeletePicture = (event) => {
+  api.deletePicture($('.single-pic-image').data('id'))
+    .then(ui.onDeletePictureSuccess)
+    .then(() => {
+      if (store.view === 'user pics') {
+        onGetAllUserPictures()
+      } else {
+        onGetAllPictures()
+      }
+    })
+    .catch(ui.onDeletePictureFailure)
+}
+
+// onFormSubmit() fires when the user hits the submit button to create a new pic
 const onFormSubmit = (event) => {
   event.preventDefault()
   const uploadForm = document.getElementById('multipart-form-data')
@@ -19,6 +39,33 @@ const onFormSubmit = (event) => {
     .catch(ui.onUploadFormSubmitFailure)
 }
 
+// onGetAllPictures() retrieves all pictures from all users
+const onGetAllPictures = (event) => {
+  if (store.user) {
+    $('#my-photos').removeClass('d-none')
+    $('#all-photos').addClass('d-none')
+  }
+  api.getAllPictures()
+    .then(ui.onGetAllPicturesSuccess)
+    .then(() => { ui.displayPageOfPictures(0) })
+    .catch(ui.onGetAllPicturesFailure)
+}
+
+// onGetAllUserPictures() retrieves all the current user's pictures from the API
+// and displays them
+const onGetAllUserPictures = (event) => {
+  if (store.user) {
+    $('#my-photos').addClass('d-none')
+    $('#all-photos').removeClass('d-none')
+  }
+  api.getAllPictures()
+    .then(ui.onGetAllUserPicturesSuccess)
+    .then(() => { ui.displayPageOfPictures(0) })
+    .catch(ui.onGetAllUserPicturesFailure)
+}
+
+// onModify FormSubmit() fires when the user hits the submit button to
+// update an existing picture
 const onModifyFormSubmit = (event) => {
   event.preventDefault()
   const updateForm = document.getElementById('edit-photo-form-data')
@@ -42,45 +89,10 @@ const onModifyFormSubmit = (event) => {
     .catch(ui.onUpdateFormSubmitFailure)
 }
 
-const onGetAllPictures = (event) => {
-  if (store.user) {
-    $('#my-photos').removeClass('d-none')
-    $('#all-photos').addClass('d-none')
-  }
-  api.getAllPictures()
-    .then(ui.onGetAllPicturesSuccess)
-    .then(() => { ui.displayPageOfPictures(0) })
-    .catch(ui.onGetAllPicturesFailure)
-}
-
-const onGetAllUserPictures = (event) => {
-  if (store.user) {
-    $('#my-photos').addClass('d-none')
-    $('#all-photos').removeClass('d-none')
-  }
-  api.getAllPictures()
-    .then(ui.onGetAllUserPicturesSuccess)
-    .then(() => { ui.displayPageOfPictures(0) })
-    .catch(ui.onGetAllUserPicturesFailure)
-}
-
-const onDeletePicture = (event) => {
-  api.deletePicture($('.single-pic-image').data('id'))
-    .then(ui.onDeletePictureSuccess)
-    .then(() => {
-      if (store.view === 'user pics') {
-        onGetAllUserPictures()
-      } else {
-        onGetAllPictures()
-      }
-    })
-    .catch(ui.onDeletePictureFailure)
-}
-
 module.exports = {
+  onDeletePicture,
   onFormSubmit,
   onGetAllPictures,
   onGetAllUserPictures,
-  onModifyFormSubmit,
-  onDeletePicture
+  onModifyFormSubmit
 }

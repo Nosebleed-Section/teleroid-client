@@ -13,23 +13,27 @@ const commentEvents = require('./comments/events.js')
 
 $(() => {
   picEvents.onGetAllPictures()
-  $('#multipart-form-data').on('submit', picEvents.onFormSubmit)
-  $('#edit-photo-form-data').on('submit', picEvents.onModifyFormSubmit)
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#create-comment').on('submit', commentEvents.onCreateComment)
-  // $('#delete-comment-button').on('click', commentEvents.onDeleteCommentClick)
-  $('#delete-comment-submit').on('click', commentEvents.onDeleteCommentSubmit)
-  $('#delete-picture-submit').on('click', picEvents.onDeletePicture)
-  $('.modal').on('hide.bs.modal', authUi.resetForms)
+
   // Hide/show animation hamburger function
   $('.navbar-toggler').on('click', function () {
-  // Take this line to first hamburger animations
     $('.animated-icon1').toggleClass('open')
   })
 
-  $('#my-photos').on('click', picEvents.onGetAllUserPictures)
+  // AUTH
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('.modal').on('hide.bs.modal', authUi.resetForms)
+
+  // COMMENTS
+  $('#create-comment').on('submit', commentEvents.onCreateComment)
+  $('#delete-comment-submit').on('click', commentEvents.onDeleteCommentSubmit)
+
+  // PICTURES
   $('#all-photos').on('click', picEvents.onGetAllPictures)
+  $('#delete-picture-submit').on('click', picEvents.onDeletePicture)
+  $('#edit-photo-form-data').on('submit', picEvents.onModifyFormSubmit)
+  $('#multipart-form-data').on('submit', picEvents.onFormSubmit)
+  $('#my-photos').on('click', picEvents.onGetAllUserPictures)
 })

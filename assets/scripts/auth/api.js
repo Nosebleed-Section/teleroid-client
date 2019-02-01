@@ -1,11 +1,11 @@
 const store = require('../store.js')
 const config = require('../config.js')
 
-/// /////////////////////
+////////////////////////
 //                    //
-//  USER API actions  //
+//  AUTH API actions  //
 //                    //
-/// /////////////////////
+////////////////////////
 
 // changePassword() is used to update the API to change a user's password
 const changePassword = data => {
@@ -50,9 +50,8 @@ const signUp = data => {
 }
 
 module.exports = {
-  // sendFormData,
-  signIn,
-  signUp,
   changePassword,
-  signOut
+  signIn,
+  signOut,
+  signUp
 }

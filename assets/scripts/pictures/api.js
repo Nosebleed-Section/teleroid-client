@@ -1,7 +1,40 @@
 const store = require('../store.js')
 const config = require('../config.js')
-// const authEvents = require('./events.js')
 
+////////////////////////////
+//                        //
+//  PICTURES API actions  //
+//                        //
+////////////////////////////
+
+// deletePicture() deletes a picture from the API
+const deletePicture = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// getAllPictures() gets all the pictures from API
+const getAllPictures = () => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures',
+    method: 'GET'
+  })
+}
+
+// getOnePicture gets a single picture from API
+const getOnePicture = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/pictures/' + id,
+    method: 'GET'
+  })
+}
+
+// sendFormData() sends form data to the API to create a new picture
 const sendFormData = data => {
   return $.ajax({
     url: config.apiUrl + '/pictures',
@@ -15,6 +48,7 @@ const sendFormData = data => {
   })
 }
 
+// sendModifyFormData() sends form data to the API to patch an existing picture
 const sendModifyFormData = data => {
   return $.ajax({
     url: config.apiUrl + '/pictures/' + data.get('id'),
@@ -22,30 +56,6 @@ const sendModifyFormData = data => {
     processData: false,
     contentType: false,
     data,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const getAllPictures = () => {
-  return $.ajax({
-    url: config.apiUrl + '/pictures',
-    method: 'GET'
-  })
-}
-
-const getOnePicture = (id) => {
-  return $.ajax({
-    url: config.apiUrl + '/pictures/' + id,
-    method: 'GET'
-  })
-}
-
-const deletePicture = (id) => {
-  return $.ajax({
-    url: config.apiUrl + '/pictures/' + id,
-    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
